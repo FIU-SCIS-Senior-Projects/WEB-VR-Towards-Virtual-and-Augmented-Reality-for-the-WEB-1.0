@@ -7,7 +7,7 @@ const PATHS = {
 };
 
 module.exports = {
-  // Entries hav eto resolve to files! they rely on Node
+  // Entries have to resolve to files! they rely on Node
   // convention by default so if a directory contains *index.js*,
   // it resolves to that
   entry: {
