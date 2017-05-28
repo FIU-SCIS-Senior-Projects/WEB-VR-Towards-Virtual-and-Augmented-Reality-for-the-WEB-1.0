@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function newPage(name){
   return new HtmlWebpackPlugin({
@@ -44,7 +45,18 @@ module.exports = {
     newPage('BreadthFirst'),
     newPage('SinglyLinkedList'),
     newPage('DepthFirstSearch'),
+    new ExtractTextPlugin("[name].css")
   ],
+
+  module: {
+    loaders: [
+      //Extract css files
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      }
+    ]
+  },
 
   rules: [
     {
