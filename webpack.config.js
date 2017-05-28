@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const scriptsPath = "./app/scripts/"
-
 function newPage(name){
   return new HtmlWebpackPlugin({
     filename: name + '.html',
@@ -11,23 +9,6 @@ function newPage(name){
     chunks: [name]
   })
 }
-
-const PATHS = {
-  index: "./app/scripts/index.js",
-  bst: "./app/scripts/BinarySearchTree.js",
-  breadthFirst: scriptsPath + "BreadthFirst.js",
-  depthFirst: scriptsPath + "DepthFirst.js",
-  dblyLinkedList: scriptsPath + "DoublyLinkedList.js",
-  hashTable: scriptsPath + "HashTable.js",
-  singlyLinkList: scriptsPath + "LinkedList.js",
-  queue: scriptsPath + "Queue.js",
-  quickSort: scriptsPath + "QuickSort.ja",
-  selectionSort: scriptsPath + "SelectionSort.js",
-  stack: scriptsPath + "Stack.js",
-
-  build: path.resolve(__dirname, 'build'),
-  source: "./app/views/"
-};
 
 module.exports = {
   // Entries have to resolve to files! they rely on Node
@@ -48,7 +29,7 @@ module.exports = {
 
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build/scripts'),
     filename: '[name].js',
   },
   plugins: [
@@ -64,4 +45,18 @@ module.exports = {
     newPage('SinglyLinkedList'),
     newPage('DepthFirstSearch'),
   ],
+
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env'],
+          plugins: [require('babel-plugin-transform-object-rest-spread')]
+        }
+      }
+    }
+  ]
 };
