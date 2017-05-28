@@ -5,9 +5,9 @@ use spat_input::InputAdapter;
 //pattern matching
 #[derive(Debug, Clone)]
 pub enum Button{
-    Left,
-    Right,
-    Middle
+    Left = 1,
+    Right = 2,
+    Middle = 3
 }
 
 
@@ -21,6 +21,7 @@ pub struct Manipulation{
     m_button: Button, //TODO: implement middle scroll
 }
 
+//Struct containing the ranges of each manipulator in the device
 #[derive(Debug, Copy, Clone)]
 pub struct Input{
     x_min: i32, 
@@ -36,14 +37,28 @@ pub struct Input{
 //The different states of the mouse
 //TODO: Add middle scroll
 #[derive(Debug)]
-pub struct State{}
+pub enum State{
+    MoveMouse,
+    LeftButtonDown,
+    RightButtonDown,
+    MiddleButtonDown,
+    Idle
+}
 
 
-//This struct deals with the types of events based on states
+//These are traits that deal with the types of events based on states
 //Will remain unimplemented for now
-#[derive(Debug, Copy, Clone)]
-pub struct Event{
+pub trait Event{
+    fn move_mouse(&mut self, x:i32, y:i32);
+    fn left_button_down();
+    fn right_button_down();
+    fn middle_button_down();
+}
 
+//These are traits that deal with the different functions to be applied
+//in order to generate different outputs
+pub trait MouseResolutions {
+    fn update_output(&mut self);
 }
 
 
@@ -73,42 +88,49 @@ impl Input {
     }
 }
 
-impl State {
-    pub fn new() -> State {
-        State{}
+impl Event for Manipulation {
+    fn move_mouse(&mut self, x:i32, y:i32) {
+        self.x = x;
+        self.y = y;
     }
 
-    pub fn move_mouse(man: &mut Manipulation, x:i32, y:i32) {
-        man.x = x;
-        man.y = y;
-    }
-
-    pub fn left_button_down() {
+    fn left_button_down() {
         println!("left button pressed");
     }
-    pub fn right_button_down() {
+    fn right_button_down() {
         println!("right button pressed");
     }
-    pub fn middle_button_down() {
+    fn middle_button_down() {
         println!("middle button pressed");
     }
 }
-impl Event {
-    pub fn new() -> Event {
-        Event{}
-    }
-}
+
+
 
 //This is where the predefined structs and enums above are used to represent the device
 //based on the generic input adapter from spat_input
-impl InputAdapter<Manipulation, Input, String, State, Event> {
-    pub fn new_mouse() -> InputAdapter<Manipulation, Input, String, State, Event> {
+impl InputAdapter<Manipulation, Input, String, State> {
+    pub fn new_mouse() -> InputAdapter<Manipulation, Input, String, State> {
         InputAdapter{
             manipulation: Manipulation::new(),
             input: Input::new(),
-            output: "Current Output".to_string(),
-            state: State::new(),
-            event: Event::new()
+            output: "".to_string(),
+            state: State::Idle,
         }
+    }
+}
+
+impl MouseResolutions for InputAdapter<Manipulation, Input, String, State> {
+    fn update_output(&mut self) {
+        let out = json!({
+            "current_x": self.manipulation.x,
+            "current_y": self.manipulation.y,
+            "state": match self.state{
+                State::Idle => "Idle",
+                _=> "Button down"
+            },
+        });
+
+        self.output = format!("{}",out.to_string());
     }
 }
