@@ -1,6 +1,10 @@
 [package]
 name = "webvr-input"
 version = "0.1.0"
-authors = ["pachev"]
+authors = ["Pachev Josephi<pachevjoseph@gmail.com>", "Bernado Pla"]
+description = "webvr-input provides an abstraction for the users to connect input devices"
 
 [dependencies]
+libc = "0.2"
+serde_json = "1.0"
+
