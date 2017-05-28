@@ -4,9 +4,9 @@ extern crate serde_json;
 mod spat_input;
 mod devices;
 
-use devices::mouse;
-
 fn main() {
 
+    let m = spat_input::InputAdapter::new_mouse();
+    println!("Mouse output: {}",m.output);
 
 }

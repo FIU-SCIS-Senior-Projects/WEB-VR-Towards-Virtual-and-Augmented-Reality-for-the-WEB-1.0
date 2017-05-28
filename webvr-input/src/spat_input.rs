@@ -15,9 +15,9 @@ pub enum ConnectionMode {
 //This will serve as a generic adapter to be used by all devices
 #[derive(Debug, Copy, Clone)]
 pub struct InputAdapter<T,U,V,W,X>{
-    manipulation: T, //The different inputs on a device
-    input: U, //The range of each input button 0..1
-    output: V, //The ouput after applying a function based on device
-    state: W, //defined enum for the different states of the device
-    event: X, //event types based on the state of the device
+    pub manipulation: T, //The different inputs on a device
+    pub input: U, //The range of each input button 0..1
+    pub output: V, //The ouput after applying a function based on device
+    pub state: W, //defined enum for the different states of the device
+    pub event: X, //event types based on the state of the device
 }
