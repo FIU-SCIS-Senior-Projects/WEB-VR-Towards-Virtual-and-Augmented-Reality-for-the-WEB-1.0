@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint app",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server",
-    "build": "rm -rf /dist/* && webpack",
+    "build": "npm run clear:build && webpack",
     "build:prod": "npm run clear:build && webpack -p",
     "start": "webpack-dev-server --env development",
     "clear:build": "del-cli build/**/*.js && del-cli build/**/*.html"

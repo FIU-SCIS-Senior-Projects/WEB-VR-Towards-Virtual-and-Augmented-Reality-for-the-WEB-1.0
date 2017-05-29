@@ -30,7 +30,7 @@ module.exports = {
 
   },
   output: {
-    path: path.resolve(__dirname, 'build/scripts'),
+    path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
   },
   plugins: [
@@ -49,16 +49,18 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
-      //Extract css files
+    loaders: [  
+      {
+        test: /\.js$/,
+        loaders: ['react-hot', 'babel'],
+        include: path.join(__dirname, 'src')
+      },
+
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader"})
-      }, {
-        test: /\.js$/,
-        loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        loader: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})
       }
-    ]
+    ],
+
   }
 };
