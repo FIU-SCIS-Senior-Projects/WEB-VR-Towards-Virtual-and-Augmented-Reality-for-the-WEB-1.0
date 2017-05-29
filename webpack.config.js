@@ -53,22 +53,12 @@ module.exports = {
       //Extract css files
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+        loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader"})
+      }, {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
       }
     ]
-  },
-
-  rules: [
-    {
-      test: /\.js$/,
-      exclude: /(node_modules)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['env'],
-          plugins: [require('babel-plugin-transform-object-rest-spread')]
-        }
-      }
-    }
-  ]
+  }
 };
