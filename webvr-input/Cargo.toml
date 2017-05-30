@@ -1,11 +1,12 @@
 [package]
 name = "webvr-input"
 version = "0.1.0"
-authors = ["Pachev Josephi<pachevjoseph@gmail.com>", "Bernado Pla"]
+authors = ["Pachev Josephi<pachevjoseph@gmail.com>", "Bernado Pla <bpla2112@gmail.com>"]
 description = "webvr-input provides an abstraction for the users to connect input devices"
 
 [dependencies]
 libc = "0.2"
 libusb = "0.3.0"
 serde_json = "1.0"
+os_type = "1.0.0"
 

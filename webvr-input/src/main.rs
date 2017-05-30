@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate serde_json;
 extern crate libusb;
+extern crate os_type;
 
 mod spat_input;
 mod devices;
@@ -15,6 +16,10 @@ fn main() {
     let mut m;
     //Starting off by using the libusb library to read usb devices
     let context = libusb::Context::new().unwrap();
+
+    let os = os_type::current_platform();
+    print!("Current Operating system: {:?}\n", os.os_type);
+    print!("version: {}\n", os.version);
 
     for device in context.devices().unwrap().iter() {
         //TODO: Figure out a way to match product_id to different products

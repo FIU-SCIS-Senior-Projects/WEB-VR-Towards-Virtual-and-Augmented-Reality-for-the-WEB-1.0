@@ -1,5 +1,5 @@
+extern crate os_type; //added os_type crate to get information on operating system
 use spat_input::InputAdapter;
-
 
 //Buttons used to represent the different physical buttons on the mouse and used for 
 //pattern matching
@@ -89,12 +89,21 @@ impl Input {
 }
 
 impl Event for Manipulation {
+
     fn move_mouse(&mut self, x:i32, y:i32) {
         self.x = x;
         self.y = y;
     }
 
     fn left_button_down() {
+        //Trying to differentiate based on operating system
+        
+        // let os = os_type::current_platform();
+
+        // if os.os_type == "Ubuntu".unwrap() {
+        //     print!("Left button pressed");
+        //     print!("System is: {:?}", os.os_type);
+        // }
         println!("left button pressed");
     }
     fn right_button_down() {
