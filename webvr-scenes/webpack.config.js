@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const webpack = require('webpack');
 
 function newPage(name){
   return new HtmlWebpackPlugin({
@@ -45,7 +46,11 @@ module.exports = {
     newPage('BreadthFirst'),
     newPage('SinglyLinkedList'),
     newPage('DepthFirstSearch'),
-    new ExtractTextPlugin("[name].css")
+    new ExtractTextPlugin("[name].css"),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
 
   module: {
