@@ -1,4 +1,5 @@
 use spat_input::InputAdapter;
+use std::collections::HashSet;
 
 
 //Buttons used to represent the different physical buttons on the mouse and used for 
@@ -36,12 +37,15 @@ pub struct Input{
 
 //The different states of the mouse
 //TODO: Add middle scroll
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum State{
     MoveMouse,
     LeftButtonDown,
     RightButtonDown,
     MiddleButtonDown,
+    LeftRight,
+    LeftMiddle,
+    RightMiddle,
     Idle
 }
 
@@ -53,6 +57,9 @@ pub trait Event{
     fn left_button_down();
     fn right_button_down();
     fn middle_button_down();
+    fn left_middle_down();
+    fn left_right_down();
+    fn right_middle_down();
 }
 
 //These are traits that deal with the different functions to be applied
@@ -103,12 +110,22 @@ impl Event for Manipulation {
     fn middle_button_down() {
         println!("middle button pressed");
     }
+    fn left_middle_down() {
+        println!("Left and middle down");
+    }
+    fn left_right_down() {
+        println!("Left and right down");
+    }
+    fn right_middle_down() {
+        println!("right and middle down");
+    }
 }
 
 
 
 //This is where the predefined structs and enums above are used to represent the device
 //based on the generic input adapter from spat_input
+
 impl InputAdapter<Manipulation, Input, String, State> {
     pub fn new_mouse() -> InputAdapter<Manipulation, Input, String, State> {
         InputAdapter{
@@ -127,7 +144,10 @@ impl MouseResolutions for InputAdapter<Manipulation, Input, String, State> {
             "current_y": self.manipulation.y,
             "state": match self.state{
                 State::Idle => "Idle",
-                _=> "Button down"
+                State::LeftButtonDown=> "Left Button down",
+                State::RightButtonDown=> "Right Button down",
+                State::MiddleButtonDown=> "Middle Button down",
+                _=> "Combo Breaker"
             },
         });
 
