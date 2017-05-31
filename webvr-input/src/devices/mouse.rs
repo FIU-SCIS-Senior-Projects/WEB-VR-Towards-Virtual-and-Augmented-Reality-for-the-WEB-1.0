@@ -1,7 +1,7 @@
 extern crate os_type; //added os_type crate to get information on operating system
 use spat_input::InputAdapter;
 
-//Buttons used to represent the different physical buttons on the mouse and used for 
+//Buttons used to represent the different physical buttons on the mouse and used for
 //pattern matching
 #[derive(Debug, Clone)]
 pub enum Button{
@@ -24,10 +24,10 @@ pub struct Manipulation{
 //Struct containing the ranges of each manipulator in the device
 #[derive(Debug, Copy, Clone)]
 pub struct Input{
-    x_min: i32, 
-    x_max: i32, 
-    y_min: i32, 
-    y_max: i32, 
+    x_min: i32,
+    x_max: i32,
+    y_min: i32,
+    y_max: i32,
     l_button: bool,
     r_button: bool,
     m_button: bool,
@@ -96,20 +96,78 @@ impl Event for Manipulation {
     }
 
     fn left_button_down() {
-        //Trying to differentiate based on operating system
-        
-        // let os = os_type::current_platform();
 
-        // if os.os_type == "Ubuntu".unwrap() {
-        //     print!("Left button pressed");
-        //     print!("System is: {:?}", os.os_type);
-        // }
+        let os = os_type::current_platform();
+        let mut curr_state = State::Idle;
+
+        match os.os_type{
+            os_type::OSType::Ubuntu => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click command based on ubuntu native API
+                curr_state = State::LeftButtonDown;
+
+
+            },
+
+            os_type::OSType::OSX => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click based on OSX native API
+                curr_state = State::LeftButtonDown;
+            }
+            _ => {
+                println!("It's probably Windows");
+                //handle left button click based on Windows API
+                curr_state = State::LeftButtonDown;
+            }
+        }
         println!("left button pressed");
     }
     fn right_button_down() {
+        let os = os_type::current_platform();
+        let mut curr_state = State::Idle;
+
+        match os.os_type{
+            os_type::OSType::Ubuntu => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click command based on ubuntu native API
+                curr_state = State::RightButtonDown;
+            },
+
+            os_type::OSType::OSX => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click based on OSX native API
+                curr_state = State::RightButtonDown;
+            }
+            _ => {
+                println!("It's probably Windows");
+                //handle left button click based on Windows API
+                curr_state = State::RightButtonDown;
+            }
+        }
         println!("right button pressed");
     }
     fn middle_button_down() {
+        let os = os_type::current_platform();
+        let curr_state = State::Idle;
+
+        match os.os_type{
+            os_type::OSType::Ubuntu => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click command based on ubuntu native API
+                curr_state = State::MiddleButtonDown;
+            },
+
+            os_type::OSType::OSX => {
+                println!("It's {:?}", os.os_type);
+                //handle left button click based on OSX native API
+                curr_state = State::MiddleButtonDown;
+            }
+            _ => {
+                println!("It's probably Windows");
+                //handle left button click based on Windows API
+                curr_state = State::MiddleButtonDown;
+            }
+        }
         println!("middle button pressed");
     }
 }

@@ -11,15 +11,21 @@ use spat_input::InputAdapter;
 
 fn main() {
 
-
-    
     let mut m;
     //Starting off by using the libusb library to read usb devices
     let context = libusb::Context::new().unwrap();
 
-    let os = os_type::current_platform();
+    let mut os = os_type::current_platform();
+
     print!("Current Operating system: {:?}\n", os.os_type);
     print!("version: {}\n", os.version);
+
+    match os.os_type {
+        os_type::OSType::Ubuntu => {
+            println!("It's Ubuntu");
+        },
+        _ => {}
+    }
 
     for device in context.devices().unwrap().iter() {
         //TODO: Figure out a way to match product_id to different products
