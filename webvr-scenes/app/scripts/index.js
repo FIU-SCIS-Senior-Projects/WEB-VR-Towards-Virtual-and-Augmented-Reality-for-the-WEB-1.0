@@ -1,7 +1,7 @@
-import styles from '../css/index.css';
+//import styles from '../css/index.css';
 import 'jquery'
 
-$("p").hide()
+//$("p").hide()
 
 console.log('index page script')
 

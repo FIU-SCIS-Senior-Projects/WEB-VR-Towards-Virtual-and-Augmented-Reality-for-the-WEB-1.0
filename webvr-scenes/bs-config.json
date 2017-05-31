@@ -1,0 +1,5 @@
+{
+    "files" : "./app/**/*.{js, html, css}",
+    "server" : { "baseDir" : "./app" },
+    "port": 8080
+}
