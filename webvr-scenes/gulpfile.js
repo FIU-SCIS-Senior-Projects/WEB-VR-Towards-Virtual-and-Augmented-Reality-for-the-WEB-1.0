@@ -42,7 +42,8 @@ const paths = {
     './app/scripts/QuickSort.js',
     './app/scripts/SelectionSort.js',
     './app/scripts/SinglyLinkedList.js',
-    './app/scripts/Stack.js'
+    './app/scripts/Stack.js',
+    './app/scripts/aframe.js'
   ]
 
 gulp.task('default', function() {

@@ -6,7 +6,8 @@
     <title>title</title>
     <link rel="stylesheet" href="../css/Stack.css" type="text/css">
     <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <!--<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>-->
+    <script src="../build/app/scripts/aframe.bundle.js"></script>
   </head>
 
   <body>
@@ -20,35 +21,55 @@
         cursor-opacity = "0.5">
       </a-camera>
 
-      <a-box
+      <a-entity
+        geometry = "primitve: box"
+        position = " -1 0 -3"
+        depth = "1" height = "1" width = "1"
+        draw = "background: purple"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Dog">
+      </a-entity>
+
+
+
+      <a-entity
+        geometry = "primitive: box"
         position = "1 0 -3"
-        color = "red"
-        depth = "1" height = "1" width = "1">
-      </a-box>
+        depth = "1" height = "1" width = "1"
+        draw = "background: red"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Cat">
+      </a-entity>
 
-      <a-box
+      <a-entity
+        geometry = "primitive: box"
         position = "2.5 0 -3"
-        color = "blue"
-        depth = "1" height = "1" width = "1">
-      </a-box>
+        depth = "1" height = "1" width = "1"
+        draw = "background: blue"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Bird">
+      </a-entity>
 
-      <a-box
+      <a-entity
+        geometry = "primitive: box"
         position = "4 0 -3"
-        color = "green"
-        depth = "1" height = "1" width = "1">
-      </a-box>
+        depth = "1" height = "1" width = "1"
+        draw = "background: green"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Ball">
+      </a-entity>
 
-      <a-box
+      <a-entity
+        geometry = "primitive: box"
         position = "5.5 0 -3"
-        color = "yellow"
-        depth = "1" height = "1" width = "1">
-      </a-box>
+        depth = "1" height = "1" width = "1"
+        draw = "background: yellow"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Train">
+      </a-entity>
 
-      <a-box
+      <a-entity
+        geometry = "primitive: box"
         position = "7 0 -3"
-        color = "pink"
-        depth = "1" height = "1" widht = "1">
-      </a-box>
+        depth = "1" height = "1" widht = "1"
+        draw = "background: pink"
+        textwrap = "textAlign: center; x: 128; y: 128; font: 40px serif; text: Computer">
+      </a-entity>
 
 
       <script type="../build/app/scripts/Stack.bundle.js"></script>
