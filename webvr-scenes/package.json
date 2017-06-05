@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/FIU-SCIS-Senior-Projects/WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0#readme",
   "devDependencies": {
+    "aframe-physics-system": "^1.4.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^7.0.0",
