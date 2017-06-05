@@ -1,8 +1,10 @@
 use spat_input::InputAdapter;
 use std::collections::HashSet;
+use std::time::{Duration,Instant};
+use std::thread::sleep;
 
 
-//Buttons used to represent the different physical buttons on the mouse and used for 
+//Buttons used to represent the different physical buttons on the mouse and used for
 //pattern matching
 #[derive(Debug, Clone)]
 pub enum Button{
@@ -25,10 +27,10 @@ pub struct Manipulation{
 //Struct containing the ranges of each manipulator in the device
 #[derive(Debug, Copy, Clone)]
 pub struct Input{
-    x_min: i32, 
-    x_max: i32, 
-    y_min: i32, 
-    y_max: i32, 
+    x_min: i32,
+    x_max: i32,
+    y_min: i32,
+    y_max: i32,
     l_button: bool,
     r_button: bool,
     m_button: bool,
@@ -54,12 +56,18 @@ pub enum State{
 //Will remain unimplemented for now
 pub trait Event{
     fn move_mouse(&mut self, x:i32, y:i32);
-    fn left_button_down();
-    fn right_button_down();
-    fn middle_button_down();
-    fn left_middle_down();
-    fn left_right_down();
-    fn right_middle_down();
+    fn left_button_down(&mut self);
+    fn left_button_up(&mut self);
+    fn right_button_down(&mut self);
+    fn right_button_up(&mut self);
+    fn middle_button_down(&mut self);
+    fn middle_button_up(&mut self);
+    fn left_middle_down(&mut self);
+    fn left_middle_up(&mut self);
+    fn left_right_down(&mut self);
+    fn left_right_up(&mut self);
+    fn right_middle_down(&mut self);
+    fn right_middle_up(&mut self);
 }
 
 //These are traits that deal with the different functions to be applied
@@ -76,7 +84,7 @@ impl Manipulation {
             y: 0,
             l_button: Button::Left,
             r_button: Button::Right,
-            m_button: Button::Middle,
+            m_button: Button::Middle
         }
     }
 }
@@ -97,27 +105,95 @@ impl Input {
 
 impl Event for Manipulation {
     fn move_mouse(&mut self, x:i32, y:i32) {
+
         self.x = x;
         self.y = y;
+        let mut curr_state = State::MoveMouse;
+        let mut curr_time = sleep(Duration::new(1,0));
+
+        //check if the mouse finally stopped moving and is not holding anything before changing state to idle
+        // if self.x == x && self.y == y && curr_time == sleep(Duration::new(1, 0)){
+        //     let mut curr_state = State::Idle;
+        //     println!("Mouse stopped moving");
+        // }
     }
 
-    fn left_button_down() {
+    fn left_button_down(&mut self) {
+        let mut curr_state = State::LeftButtonDown;
+        Input::new().l_button = true;
         println!("left button pressed");
     }
-    fn right_button_down() {
+
+    fn left_button_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().l_button = false;
+        println!("left button not pressed");
+    }
+
+    fn right_button_down(&mut self) {
+        let mut curr_state = State::RightButtonDown;
+        Input::new().r_button = true;
         println!("right button pressed");
     }
-    fn middle_button_down() {
+
+    fn right_button_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().r_button = false;
+        println!("right button not pressed");
+    }
+
+    fn middle_button_down(&mut self) {
+        let mut curr_state = State::MiddleButtonDown;
+        Input::new().m_button = true;
         println!("middle button pressed");
     }
-    fn left_middle_down() {
+
+    fn middle_button_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().m_button = false;
+        println!("middle button not pressed");
+    }
+
+    fn left_middle_down(&mut self) {
+        let mut curr_state = State::LeftMiddle;
+        Input::new().l_button = true;
+        Input::new().m_button = true;
         println!("Left and middle down");
     }
-    fn left_right_down() {
+
+    fn left_middle_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().l_button = false;
+        Input::new().m_button = false;
+        println!("Left and middle released");
+    }
+
+    fn left_right_down(&mut self) {
+        let mut curr_state = State::LeftRight;
+        Input::new().l_button = true;
+        Input::new().r_button = true;
         println!("Left and right down");
     }
-    fn right_middle_down() {
+
+    fn left_right_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().l_button = false;
+        Input::new().r_button = false;
+        println!("Left and right released");
+    }
+
+    fn right_middle_down(&mut self) {
+        let mut curr_state = State::RightMiddle;
+        Input::new().r_button = true;
+        Input::new().m_button = true;
         println!("right and middle down");
+    }
+
+    fn right_middle_up(&mut self) {
+        let mut curr_state = State::Idle;
+        Input::new().r_button = true;
+        Input::new().m_button = true;
+        println!("right and middle released");
     }
 }
 
@@ -147,6 +223,9 @@ impl MouseResolutions for InputAdapter<Manipulation, Input, String, State> {
                 State::LeftButtonDown=> "Left Button down",
                 State::RightButtonDown=> "Right Button down",
                 State::MiddleButtonDown=> "Middle Button down",
+                State::LeftMiddle=> "Left and Middle Button down",
+                State::LeftRight=> "Left and Right Button down",
+                State::RightMiddle=> "Right and Middle Button down",
                 _=> "Combo Breaker"
             },
         });
