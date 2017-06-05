@@ -65,8 +65,11 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "jquery": "^3.2.1",
-    "bootstrap": "^3.3.7"
+    "aframe": "^0.5.0",
+    "aframe-cubemap-component": "^0.1.1",
+    "aframe-gradient-sky": "^1.0.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
   },
   "browserify": {
     "transform": [
