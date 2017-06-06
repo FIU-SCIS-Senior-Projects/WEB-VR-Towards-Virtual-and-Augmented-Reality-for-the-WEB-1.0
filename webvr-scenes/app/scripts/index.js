@@ -1,7 +1,8 @@
-import styles from '../css/index.css';
-import 'jquery'
+var jQuery = require('jquery');
+window.$ = window.jQuery = jQuery;
 
-$("p").hide()
+require('bootstrap')
+jQuery.noConflict(true);
 
-console.log('index page script')
+console.log('index page script');
 

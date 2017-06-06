@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint app",
-    "serve": "webpack-dev-server",
+    "serv": "lite-server",
     "build": "npm run clear:build && webpack",
     "build:prod": "npm run clear:build && webpack -p",
     "start": "webpack-dev-server --env development",
-    "clear:build": "del-cli build/**/*.js && del-cli build/**/*.html"
+    "clear:build": "del-cli app/buildScripts/**/*.js && del-cli build/**/*.html"
   },
   "repository": {
     "url": "git+https://github.com/FIU-SCIS-Senior-Projects/WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0.git"
@@ -21,26 +21,63 @@
   },
   "homepage": "https://github.com/FIU-SCIS-Senior-Projects/WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0#readme",
   "devDependencies": {
+    "aframe-physics-system": "^1.4.0",
     "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.3",
+    "babel-eslint": "^6.1.2",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "babelify": "^7.3.0",
+    "bootstrap": "^3.3.7",
+    "browserify": "^14.4.0",
+    "browserify-shim": "^3.8.14",
     "css-loader": "^0.28.2",
     "del-cli": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-airbnb-es5": "^1.1.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-react": "^7.0.1",
+    "event-stream": "^3.3.4",
+    "exorcist": "^0.4.0",
     "extract-text-webpack-plugin": "^2.1.0",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.28.0",
+    "jshint": "^2.9.4",
+    "lite-server": "^2.3.0",
+    "merge": "^1.2.0",
     "style-loader": "^0.18.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "aframe": "^0.5.0",
+    "aframe-animation-component": "^3.2.5",
+    "aframe-cubemap-component": "^0.1.1",
+    "aframe-gradient-sky": "^1.0.4",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$"
   }
 }
