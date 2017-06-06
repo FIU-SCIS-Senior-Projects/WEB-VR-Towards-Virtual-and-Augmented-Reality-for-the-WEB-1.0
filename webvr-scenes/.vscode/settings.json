@@ -8,5 +8,6 @@
         }
     ],
 
-    "javascript.validate.enable": true
+    "javascript.validate.enable": true,
+    "editor.wordWrap": "on"
 }

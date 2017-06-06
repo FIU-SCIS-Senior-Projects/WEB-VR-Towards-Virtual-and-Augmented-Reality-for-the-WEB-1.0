@@ -7,5 +7,5 @@ var animation = require('aframe-animation-component');
 
 AFRAME.registerComponent("draw", draw);
 AFRAME.registerComponent("textwrap", textwrap);
-AFRAME.registerComponent("gradientsky", gradientSky);
+
 
