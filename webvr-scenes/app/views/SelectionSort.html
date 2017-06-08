@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="../build/app/scripts/aframe.bundle.js"></script>
-    <title>Insertion Sort</title>
+    <title>Selection Sort</title>
   </head>
   <body>
     <a-scene>
@@ -17,40 +17,94 @@
       <a-gradient-sky material = "shader: gradient; topColor: 255 0 0; bottomColor: 3 58 82;"></a-gradient-sky>
 
       <a-camera
-        position = "2 0 4"
+        position = "1 0 4"
         cursor-visible = "true" cursor-scale = "2"
         cursor-color = "#FFFFFF" cursor-opacity = "1.0">
       </a-camera>
 
+      <a-entity
+        position = "0.5 5 -7"
+        scale = "2 2 1"
+        wrapCount = "40"
+        text = "width: 4; color: white; letterSpacing: 2;
+                value:
+                  The selection sort algorithm sorts an array by repeatedly find the minimum element(considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. \n 1) The subarray which is already sorted. \n 2) Remaining subarray which is unsorted. \n In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray"></a-entity>
+
+
   
-      <a-entity mixin = "standardSize box" position = "-2 1 -3"
+      <a-entity mixin = "standardSize box" position = "-2 1.5 -3"
                 draw = "background: white"
-                textWrap = "textAllign: center; x:114; y: 128; font: bold 90px serif; text: 1">
+                textWrap = "textAlign: center; x:114; y: 128; font: bold 90px serif; text: 21"
+                animation__shiftOne =
+                  "property: position; delay: 3000; dur: 500; dir: normal: from: -2 1.5 -3; to: -2 0 -3"
+                animation__shiftTwo =
+                  "property: position; delay: 4000; dur: 500; dir: normal; from: -2 0 -3; to: 2.5 0 -3"
+                animation__shiftThree =
+                  "property:position; delay: 5000; dur: 500; dir: normal; from: 2.5 0 -3; to: 2.5 1.5 -3"
+                animation__shiftFour =
+                  "property: position; delay: 11000; dur: 500; dir: normal; from: 2.5 1.5 -3; to: 2.5 0 -3"
+                animation__shiftFive =
+                  "property: position; delay: 12000; dur: 500; dir: normal; from: 2.5 0 -3; to: 1 0 -3"
+                animation__shiftSix =
+                  "property: position; delay: 13000; dur: 500; dir: normal; from: 1 0 -3; to: 1 1.5 -3">
       </a-entity>
 
-      <a-entity mixin = "standardSize box" position = "-0.5 1 -3"
+      <a-entity mixin = "standardSize box" position = "-0.5 1.5 -3"
                 draw = "background: white"
-                textWrap = "textAllign: center; x:114; y: 128; font: bold 90px serif; text: 2">
+                textWrap = "textAlign: center; x:114; y: 128; font: bold 90px serif; text: 55"
+                animation__shiftOne =
+                  "property: position; delay: 8000; dur: 500; dir: normal; from: -0.5 1.5 -3; to: -0.5 0 -3"
+                animation__shiftTwo =
+                  "property: position; delay: 9000; dur: 500; dir: normal; from: -0.5 0 -3; to: 1 0 -3"
+                animation__shiftThree =
+                  "property: position; delay: 10000; dur: 500; dir: normal; from: 1 0 -3; to: 1 1.5 -3"
+                animation__shiftSixteen = 
+                  "property: position; delay: 13000; dur: 500; dir: normal; from: 1 1.5 -3; to: 1 0 -3"
+                animation__shiftSeventeen =
+                  "property: position; delay: 14000; dur: 500; dir: normal; from: 1 0 -3; to: 2.5 0 -3"
+                animation__shiftEighteen =
+                  "property: position; delay: 15000; dur: 500; dir: normal; from: 2.5 0 -3; to: 2.5 1.5 -3"
+                animation__shiftTwentyTwo =
+                  "property: position; delay: 18000; dur: 500; dir: normal; from: 2.5 1.5 -3; to: 2.5 0 -3"
+                animation__shiftTwentyThree =
+                  "property: position; delay: 19000; dur: 500; dir: normal; from: 2.5 0 -3; to: 4 0 -3"
+                animation__shiftTwentyFour =
+                  "property: position; delay: 20000; dur: 500; dir: normal; from: 4 0 -3; to: 4 1.5 -3">
       </a-entity>
       
-      <a-entity mixin = "standardSize box" position = "1 1 -3"
+      <a-entity mixin = "standardSize box" position = "1 1.5 -3"
                 draw = "background: white"
-                textWrap = "textAllign: center; x:114; y: 128; font: bold 90px serif; text: 3">
+                textWrap = "textAlign: center; x:114; y: 128; font: bold 90px serif; text: 9"
+
+                animation__shiftOne =
+                  "property: position; delay: 6000; dur: 500; dir: normal; from: 1 1.5 -3; to: 1 0 -3"
+                animation__shiftTwo =
+                  "property: position; delay:7000; dur: 500; dir: normal; from: 1 0 -3; to: -0.5 0 -3"
+                animation__shiftThree =
+                  "property: position; delay: 8000; dur: 500; dir: normal; from: -0.5 0 -3; to: -0.5 1.5 -3">
       </a-entity>
       
-      <a-entity mixin = "standardSize box" position = "2.5 1 -3"
+      <a-entity mixin = "standardSize box" position = "2.5 1.5 -3"
                 draw = "background: white"
-                textWrap = "textAllign: center; x:114; y: 128; font: bold 90px serif; text: 5">
+                textWrap = "textAlign: center; x:114; y: 128; font: bold 90px serif; text: 5"
+                animation__shiftOne =
+                  "property: position; delay:1000; dur: 500; dir: normal; from: 2.5 1.5 -3; to: 2.5 0 -3"
+                animation__shiftTwo =
+                  "property: position; delay: 2000; dur: 500; dir: normal; from: 2.5 0 -3; to: -2 0 -3"
+                animation__shiftThree =
+                  "property: position; delay: 3000: dur: 500; dir: normal; from: -2 0 -3; to: -2 1.5 -3">
       </a-entity>
       
-      <a-entity mixin = "standardSize box" position = "4.0 1 -3"
+      <a-entity mixin = "standardSize box" position = "4.0 1.5 -3"
                 draw = "background: white"
-                textWrap = "textAllign: center; x:114; y: 128; font: bold 90px serif; text: 9">
+                textWrap = "textAlign: center; x:114; y: 128; font: bold 90px serif; text: 32"
+                animation__shiftNineteen =
+                  "property: position; delay: 16000; dur: 500; dir: normal; from: 4.0 1.5 -3; to: 4.0 0 -3"
+                animation__shiftTwenty =
+                  "property: position; delay: 17000; dur: 500; dir: normal; from: 4.0 0 -3; to: 2.5 0 -3"
+                animation__shiftTwentyOne =
+                  "property: position; delay: 18000; dur: 500; dir: normal; from: 2.5 0 -3; to: 2.5 1.5 -3">
       </a-entity>
-    </a-scene>
-    </a-scene>
-    </a-scene>
-    </a-scene>
     </a-scene>
   </body>
 </html>
