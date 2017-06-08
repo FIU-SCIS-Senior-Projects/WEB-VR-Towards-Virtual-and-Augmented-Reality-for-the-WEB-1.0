@@ -32,6 +32,9 @@ pub fn handle_mouse(dev: &mut InputAdapter<mouse::Manipulation,mouse::Input,Stri
             "{Left}" => mouse::State::LeftButtonDown,
             "{Right}" => mouse::State::RightButtonDown,
             "{Middle}" => mouse::State::MiddleButtonDown,
+            "{LeftRight}" => mouse::State::LeftRight,
+            "{LeftMiddle}" => mouse::State::LeftMiddle,
+            "{RightMiddle}" => mouse::State::RightMiddle,
             _=> mouse::State::Idle
         };
 

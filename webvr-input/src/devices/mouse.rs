@@ -109,13 +109,6 @@ impl Event for Manipulation {
         self.x = x;
         self.y = y;
         let mut curr_state = State::MoveMouse;
-        let mut curr_time = sleep(Duration::new(1,0));
-
-        //check if the mouse finally stopped moving and is not holding anything before changing state to idle
-        // if self.x == x && self.y == y && curr_time == sleep(Duration::new(1, 0)){
-        //     let mut curr_state = State::Idle;
-        //     println!("Mouse stopped moving");
-        // }
     }
 
     fn left_button_down(&mut self) {
@@ -191,8 +184,8 @@ impl Event for Manipulation {
 
     fn right_middle_up(&mut self) {
         let mut curr_state = State::Idle;
-        Input::new().r_button = true;
-        Input::new().m_button = true;
+        Input::new().r_button = false;
+        Input::new().m_button = false;
         println!("right and middle released");
     }
 }
