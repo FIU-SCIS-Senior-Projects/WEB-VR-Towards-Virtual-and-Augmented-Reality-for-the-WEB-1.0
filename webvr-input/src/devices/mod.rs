@@ -25,13 +25,16 @@ pub fn handle_mouse(dev: &mut InputAdapter<mouse::Manipulation,mouse::Input,Stri
 
     if !new_buttons.is_empty() || !old_buttons.is_empty() {
 
-        dev.manipulation.move_mouse(state.x(), state.y());
+        dev.move_mouse(state.x(), state.y());
         let button_down = format!("{:?}", new_buttons);
 
         dev.state = match button_down.as_ref(){
             "{Left}" => mouse::State::LeftButtonDown,
             "{Right}" => mouse::State::RightButtonDown,
             "{Middle}" => mouse::State::MiddleButtonDown,
+            "{Left, Right}" | "{Right, Left}"   => mouse::State::LeftRight,
+            "{Left, Middle}"  | "{Middle, Left}"  => mouse::State::LeftMiddle,
+            "{Right, Middle}"  | "{Middle, Right}"=> mouse::State::RightMiddle,
             _=> mouse::State::Idle
         };
 
