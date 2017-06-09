@@ -103,93 +103,6 @@ impl Input {
     }
 }
 
-impl Event for Manipulation {
-    fn move_mouse(&mut self, x:i32, y:i32) {
-
-        self.x = x;
-        self.y = y;
-        let mut curr_state = State::MoveMouse;
-    }
-
-    fn left_button_down(&mut self) {
-        let mut curr_state = State::LeftButtonDown;
-        Input::new().l_button = true;
-        println!("left button pressed");
-    }
-
-    fn left_button_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().l_button = false;
-        println!("left button not pressed");
-    }
-
-    fn right_button_down(&mut self) {
-        let mut curr_state = State::RightButtonDown;
-        Input::new().r_button = true;
-        println!("right button pressed");
-    }
-
-    fn right_button_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().r_button = false;
-        println!("right button not pressed");
-    }
-
-    fn middle_button_down(&mut self) {
-        let mut curr_state = State::MiddleButtonDown;
-        Input::new().m_button = true;
-        println!("middle button pressed");
-    }
-
-    fn middle_button_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().m_button = false;
-        println!("middle button not pressed");
-    }
-
-    fn left_middle_down(&mut self) {
-        let mut curr_state = State::LeftMiddle;
-        Input::new().l_button = true;
-        Input::new().m_button = true;
-        println!("Left and middle down");
-    }
-
-    fn left_middle_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().l_button = false;
-        Input::new().m_button = false;
-        println!("Left and middle released");
-    }
-
-    fn left_right_down(&mut self) {
-        let mut curr_state = State::LeftRight;
-        Input::new().l_button = true;
-        Input::new().r_button = true;
-        println!("Left and right down");
-    }
-
-    fn left_right_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().l_button = false;
-        Input::new().r_button = false;
-        println!("Left and right released");
-    }
-
-    fn right_middle_down(&mut self) {
-        let mut curr_state = State::RightMiddle;
-        Input::new().r_button = true;
-        Input::new().m_button = true;
-        println!("right and middle down");
-    }
-
-    fn right_middle_up(&mut self) {
-        let mut curr_state = State::Idle;
-        Input::new().r_button = false;
-        Input::new().m_button = false;
-        println!("right and middle released");
-    }
-}
-
 
 
 //This is where the predefined structs and enums above are used to represent the device
@@ -203,6 +116,93 @@ impl InputAdapter<Manipulation, Input, String, State> {
             output: "".to_string(),
             state: State::Idle,
         }
+    }
+}
+
+impl Event for InputAdapter<Manipulation, Input, String, State>  {
+    fn move_mouse(&mut self, x:i32, y:i32) {
+
+        self.manipulation.x = x;
+        self.manipulation.y = y;
+        self.state= State::MoveMouse;
+    }
+
+    fn left_button_down(&mut self) {
+        self.state = State::LeftButtonDown;
+        self.input.l_button = true;
+        println!("left button pressed");
+    }
+
+    fn left_button_up(&mut self) {
+        self.state = State::Idle;
+        self.input.l_button = false;
+        println!("left button not pressed");
+    }
+
+    fn right_button_down(&mut self) {
+        self.state = State::RightButtonDown;
+        self.input.r_button = true;
+        println!("right button pressed");
+    }
+
+    fn right_button_up(&mut self) {
+        self.state = State::Idle;
+        self.input.r_button = false;
+        println!("right button not pressed");
+    }
+
+    fn middle_button_down(&mut self) {
+        self.state = State::RightButtonDown;
+        self.input.m_button = true;
+        println!("middle button pressed");
+    }
+
+    fn middle_button_up(&mut self) {
+        self.state = State::Idle;
+        self.input.r_button = false;
+        println!("middle button not pressed");
+    }
+
+    fn left_middle_down(&mut self) {
+        self.state = State::LeftMiddle;
+        self.input.l_button = true;
+        self.input.m_button = true;
+        println!("Left and middle down");
+    }
+
+    fn left_middle_up(&mut self) {
+        self.state = State::LeftMiddle;
+        self.input.l_button = false;
+        self.input.m_button = false;
+        println!("Left and middle released");
+    }
+
+    fn left_right_down(&mut self) {
+        self.state = State::LeftRight;
+        self.input.l_button = true;
+        self.input.r_button = true;
+        println!("Left and right down");
+    }
+
+    fn left_right_up(&mut self) {
+        self.state = State::Idle;
+        self.input.l_button = false;
+        self.input.r_button = false;
+        println!("Left and right released");
+    }
+
+    fn right_middle_down(&mut self) {
+        self.state = State::RightMiddle;
+        self.input.r_button = true;
+        self.input.m_button = true;
+        println!("right and middle down");
+    }
+
+    fn right_middle_up(&mut self) {
+        self.state = State::Idle;
+        self.input.r_button = false;
+        self.input.m_button = false;
+        println!("right and middle released");
     }
 }
 
