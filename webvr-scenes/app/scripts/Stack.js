@@ -1,6 +1,11 @@
+//add jquery
+
 var jQuery = require('jquery');
+
+
 window.$ = window.jQuery = jQuery;
 
+//add bootstrap
 require('bootstrap');
 jQuery.noConflict(true);
 
