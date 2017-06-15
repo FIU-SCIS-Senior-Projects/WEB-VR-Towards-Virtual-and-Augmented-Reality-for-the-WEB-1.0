@@ -68,14 +68,4 @@ alert(arg1.toSource());
 }
 
 
-<td>
-	<input value="" id="input" size="6" type="Text"
-</td>
 
-<td>
-	<button onclick="eqscene(squeue)">Enqueue</button>
-</td>
-
-<td>
-	<button onclick="dqscene(squeue)">Dequeue</button>
-</td>
