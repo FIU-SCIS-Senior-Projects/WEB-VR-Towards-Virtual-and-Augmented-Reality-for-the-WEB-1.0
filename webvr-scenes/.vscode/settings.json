@@ -11,7 +11,7 @@
 
     "javascript.validate.enable": true,
     "editor.wordWrap": "on",
-    "editor.fontSize": 10
+    "editor.fontSize": 14
 
 
 }
