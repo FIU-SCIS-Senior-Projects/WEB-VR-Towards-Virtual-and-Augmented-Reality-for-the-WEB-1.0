@@ -22,7 +22,7 @@
       <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
       <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
 
-      <a-camera
+      <!--<a-camera
         position = "0 8.5 14"
         cursor-visible = "true"
         cursor-scale = "2"
@@ -31,7 +31,17 @@
         animation__shiftOne =
           "property: position; delay: 6000; dur: 2000; dir: normal; from: 0 9.5 14; to: 0 2 9; easing: easeInSine"
         animation__shiftTwo =
-          "property: position; delay: 14000; dur: 2000; dir: normal; from: 0 2 9; to: 0 2 4.5">
+          "property: position; delay: 14000; dur: 2000; dir: normal; from: 0 2 9; to: 0 2 4.5"
+          >
+      </a-camera>-->
+
+      <a-camera
+        position = "0 3 5"
+        cursor-visible = "true"
+        cursor-scale = "2"
+        cursor-color = "#0095DD"
+        cursor-opacity ="0.5"
+          >
       </a-camera>
 
       <a-entity
@@ -57,6 +67,18 @@
                 
                 The right sub-tree of a node has a value greater than its parent node's value ">
       </a-entity>
+
+      <!-- Nodes of the BST -->
+
+      <a-entity
+        geometry = "primitive: sphere"
+        position = "0 2 2"
+        depth = "1" height = "1" width="1"
+        draw = "background: yellow"
+        textwrap = "textAlign: center; x: 65; y: 128; font: 40px serif; text: Bird">      
+      </a-entity>
+
+
 
     </a-scene>
   </body>
