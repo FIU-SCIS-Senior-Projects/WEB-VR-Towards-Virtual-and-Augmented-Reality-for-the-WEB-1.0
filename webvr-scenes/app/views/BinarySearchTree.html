@@ -4,8 +4,60 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>title</title>
+    <script src="../build/app/scripts/aframe.bundle.js"></script>
   </head>
   <body>
-  
+    <a-scene>
+
+      <!--<a-gradient-sky material="shader: gradient;
+                                topColor: 184 198 223;
+                                bottomColor: 109 136 183;" >
+      </a-gradient-sky>-->
+
+       <a-assets>
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+      </a-assets>
+
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+      <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
+
+      <a-camera
+        position = "0 8.5 14"
+        cursor-visible = "true"
+        cursor-scale = "2"
+        cursor-color = "#0095DD"
+        cursor-opacity ="0.5"
+        animation__shiftOne =
+          "property: position; delay: 6000; dur: 2000; dir: normal; from: 0 9.5 14; to: 0 2 9; easing: easeInSine"
+        animation__shiftTwo =
+          "property: position; delay: 14000; dur: 2000; dir: normal; from: 0 2 9; to: 0 2 4.5">
+      </a-camera>
+
+      <a-entity
+        position = "0 10 8.5"
+        scale = "3 3 1"
+        wrapCount = "20"
+        text = "width: 2; color:white;
+                value: For simplicity, let us assume that each node in a tree stores an integer 
+                and also assume that all items are distinct."
+        material ="transparent: true; opacity: 0.99"
+        animation__opacStart =
+          "property: material.opacity; delay: 3000; dur: 500; dir: normal; from: 0.99; to: 0.0">
+      </a-entity>
+
+      <a-entity
+        position = "0 2.5 4.5"
+        scale = "3 3 1"
+        wrapCount = "20"
+        text = "width: 2; color:white;
+                value: A binary tree is a binary search tree if all the nodes adhere to the following properties:
+                
+                The left sub-tree of a node has a value less than or equal to its parent node's value.
+                
+                The right sub-tree of a node has a value greater than its parent node's value ">
+      </a-entity>
+
+    </a-scene>
   </body>
 </html>
