@@ -3,7 +3,7 @@ extern crate sdl2;
 
 pub mod mouse;
 
-use spat_input::InputAdapter;
+use spat_input::{InputAdapter, ConnectionMode};
 use devices::mouse::{Event, MouseResolutions};
 use std::collections::HashSet;
 use std::time::Duration;
@@ -12,7 +12,9 @@ use sdl2::mouse::MouseState;
 use std::thread; //For threads
 
 
-pub fn handle_mouse(dev: &mut InputAdapter<mouse::Manipulation,mouse::Input,String,mouse::State>, state: &MouseState){
+pub fn handle_mouse(dev: &mut InputAdapter<ConnectionMode, mouse::Input,
+                    mouse::State, String, mouse::Resolution, mouse::Event>, 
+                    state: &MouseState){
 
     let mut prev_buttons = HashSet::new();
 
