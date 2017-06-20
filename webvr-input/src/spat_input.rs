@@ -1,3 +1,7 @@
+//! The developer will need to design their own input and their own resolution
+//! fucntions for each of the inputs. 
+
+
 //For future implementations regarding the types of connections that developers
 //want to establish. This enum can be extended. Connection can include libraries
 //as well such as SDL, or LIBUSB or even Native APIs

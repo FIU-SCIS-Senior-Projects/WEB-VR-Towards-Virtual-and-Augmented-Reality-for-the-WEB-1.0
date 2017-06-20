@@ -5,22 +5,16 @@ use std::time::{Duration,Instant};
 use std::thread::sleep;
 
 
-//Buttons used to represent the different physical buttons on the mouse and used for
-//pattern matching
-#[derive(Debug, Clone)]
-pub enum Button{
-    Left = 1,
-    Right = 2,
-    Middle = 3
-}
-
 //TODO: Move this to a util or other subclass
+//This struct represents the different types of inputs that a device can have
+//as well as the min/max. This will be left to the developer to determine
 #[derive(Debug, Copy, Clone)]
 pub struct SubInput<T> {
     min: T,
     current: T,
     max: T,
 }
+
 
 impl SubInput<i32> {
     pub fn new() -> SubInput<i32>{
@@ -53,7 +47,7 @@ pub struct Resolution{
 impl Resolution {
     pub fn new() -> Resolution {
         Resolution{
-
+            
         }
     }
 }
@@ -66,7 +60,6 @@ pub struct Input{
     l_button: bool,
     r_button: bool,
     m_button: bool,
-
 }
 
 //The different states of the mouse
@@ -102,6 +95,7 @@ pub trait MouseResolutions {
     fn left_right_up(&mut self);
     fn right_middle_down(&mut self);
 }
+
 
 
 impl Input {
