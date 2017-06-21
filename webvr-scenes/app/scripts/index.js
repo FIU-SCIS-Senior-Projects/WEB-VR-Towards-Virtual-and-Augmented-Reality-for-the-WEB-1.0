@@ -4,7 +4,7 @@ window.$ = window.jQuery = jQuery;
 require('bootstrap');
 jQuery.noConflict(true);
 
-require('jquery.easing')(jQuery);
+//require('jquery.easing')(jQuery);
 
 console.log('index page script');
 
