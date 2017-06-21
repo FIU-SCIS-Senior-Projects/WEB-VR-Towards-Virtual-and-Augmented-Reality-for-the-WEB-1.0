@@ -66,3 +66,10 @@ of those sections to manage the look and feel of the site. */
     vertical-align: middle;
     margin-top: 10px;
 }
+
+.scrollspy-example {
+    position: relative;
+    height: 200px;
+    margin-top: .5rem;
+    overflow: auto;
+}
