@@ -1,6 +1,7 @@
 var jQuery = require('jquery');
 window.$ = window.jQuery = jQuery;
 
+require('tether');
 require('bootstrap');
 jQuery.noConflict(true);
 
