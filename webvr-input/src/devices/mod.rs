@@ -2,6 +2,7 @@ extern crate libusb;
 extern crate sdl2;
 
 pub mod mouse;
+pub mod empty_device; //added for empty device library
 
 use spat_input::InputAdapter;
 use devices::mouse::{Event, MouseResolutions};
@@ -12,7 +13,9 @@ use sdl2::mouse::MouseState;
 use std::thread; //For threads
 
 
-pub fn handle_mouse(dev: &mut InputAdapter<mouse::Manipulation,mouse::Input,String,mouse::State>, state: &MouseState){
+pub fn handle_mouse(dev: &mut InputAdapter<ConnectionMode, mouse::Input,
+                    mouse::State, String, mouse::Resolution, mouse::Event>,
+                    state: &MouseState){
 
     let mut prev_buttons = HashSet::new();
 
