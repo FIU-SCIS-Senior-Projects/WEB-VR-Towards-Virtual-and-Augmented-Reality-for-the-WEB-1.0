@@ -1,3 +1,9 @@
+/* Jumbotro Overrides */
+.jumbotron  {
+    margin-bottom: 0px !important;
+}
+
+/* Global Styling */
 body {
     width: 100%;
     height: 100%;
@@ -7,6 +13,27 @@ html {
     width: 100%;
     height: 100%;
 }
+
+.orangeBtn {
+    background-color: orange;
+}
+
+.row-m-t{
+    margin-top: 20px;
+}
+
+.row-p-b{
+    padding-bottom: 25px;
+}
+
+.section-m-t{
+    margin-top: 20px;
+}
+
+
+
+
+
 /* Abstract Data Structures Styling Section */
 .adts_section {
     background-color: rgb(244, 243, 239)
@@ -41,8 +68,18 @@ html {
     color: white;
 }
 
+/* About Styling Section */
 .about_section {
     background-color: rgb(26, 24, 23)
+}
+
+.about_section h1 {
+    color: white;
+
+}
+
+.about_section p {
+    color: white;
 }
 
 @media(min-width:767px) {
@@ -90,9 +127,7 @@ of those sections to manage the look and feel of the site. */
     background: #eee;
 }
 
-.row-m-t{
-    margin-top: 20px;
-}
+
 
 .textContainer {
     width: auto;
