@@ -1,20 +1,7 @@
-use spat_input::InputAdapter;
-use spat_input::ConnectionMode;
+use spat_input::{InputAdapter, ConnectionMode, SubInput };
 use std::collections::HashSet;
 use std::time::{Duration,Instant};
 use std::thread::sleep;
-
-
-//TODO: Move this to a util or other subclass
-//This struct represents the different types of inputs that a device can have
-//as well as the min/max. This will be left to the developer to determine
-#[derive(Debug, Copy, Clone)]
-pub struct SubInput<T> {
-    min: T,
-    current: T,
-    max: T,
-}
-
 
 impl SubInput<i32> {
     pub fn new() -> SubInput<i32>{

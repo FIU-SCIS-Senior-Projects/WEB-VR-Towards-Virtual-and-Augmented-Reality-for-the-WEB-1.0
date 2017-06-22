@@ -12,6 +12,13 @@ pub enum ConnectionMode {
     Native,
 }
 
+#[derive(Debug, Copy, Clone)]
+pub struct SubInput<T> {
+    pub min: T,
+    pub current: T,
+    pub max: T,
+}
+
 
 //This will serve as a generic adapter to be used by all devices
 #[derive(Debug, Copy, Clone)]
