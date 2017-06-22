@@ -1,10 +1,10 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>title</title>
+    <title>WebVR-Scenes</title>
     <link rel = "stylesheet" type="text/css" href = "css/index.css">
     <link rel = "stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
   </head>
@@ -47,104 +47,141 @@
     </nav>
 
     <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>WebVR Scenes</h1>
-                    <p>
-                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum congue tempus. Interdum et malesuada fames ac ante ipsum primis.
-                    </p>
-                    <button type="button" class="btn btn-default">Github</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Abstract Data Structure Section -->
-    <section id="adts" class="adts-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="assets/images/temp-queue.jpg" alt="Queue image" class="img-responsive center-block">
-                </div>
-                <div class="col-lg-6">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum congue tempus. Interdum et malesuada fames ac ante ipsum primis.
-                    </p>
-                    <a href="views/Queue.html">Click me to go to the Queue page!</a>
-                </div>
-            </div>
-            <div class="row row-m-t">
-                <div class="col-lg-6">
-                    <img src="assets/images/temp-stack.jpeg" alt="Stack image" class="img-responsive center-block">
-                </div>
-                <div class="colo-lg-6 textContainer">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum congue tempus. Interdum et malesuada fames ac ante ipsum primis.
-                    </p>
-                    <a href="views/Stack.html">Click me to go to Stack page!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sorting Algorithms Section -->
-    <section id="sorting" class="sorting-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="assets/images/temp-sort.jpeg" alt="Temoorary sort image" class="img-responsive center-block">
-                </div>
-                <div class="col-lg-6">
-                    <a href="views/SelectionSort.html">Click me to go to Selection Sort page!</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About and Contact Section Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="views/VRTest.html">Click me to test your VR equipment and environment!</a></br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    Objective of Project
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <a href="http://vip.fiu.edu">
-                        <img src="assets/images/FIU_VIP.jpg" alt="FIU VIP logo" class="img-responsive center-block">
-                    </a>
-                </div>
-                <div class="col-lg-6 textContainer">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien nisl, pellentesque eu convallis non, molestie vitae sapien. Ut rutrum est erat, sed molestie nisi malesuada ac. Morbi aliquam tempus est eget commodo. Praesent ullamcorper vestibulum auctor. Donec commodo condimentum porttitor. Aenean sit amet mauris non lorem vehicula ultricies eget id mi. Vivamus in pellentesque justo. Aenean a justo nunc. Etiam pulvinar vehicula est. Sed ipsum arcu, convallis id gravida eget, commodo non ante.
-                    </p>
-                </div>
-            </div>
-            <div class="row row-m-t">
-                <div class="col-lg-6">
-                    <a href="http://openhid.com/">
-                        <img src="assets/images/openhid-logo.png" alt="OpenHID logo" class="img-responsive center-block">
-                    </a>
-                </div>
-                <div class="col-lg-6 textContainer">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sapien nisl, pellentesque eu convallis non, molestie vitae sapien. Ut rutrum est erat, sed molestie nisi malesuada ac. Morbi aliquam tempus est eget commodo. Praesent ullamcorper vestibulum auctor. Donec commodo condimentum porttitor. Aenean sit amet mauris non lorem vehicula ultricies eget id mi. Vivamus in pellentesque justo. Aenean a justo nunc. Etiam pulvinar vehicula est. Sed ipsum arcu, convallis id gravida eget, commodo non ante.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div className={styles.app}>
-
+    <div id="intro" class="jumbotron text-center">
+        <h1 class="display-3"> WebVR Scenes</h1>
+        <h3 class = "text-center">
+            WebVR Experiences for Enhnacing Computer Science Education
+        </h3>
+        <a class="btn btn-primary" role="button" href="https://github.com/FIU-SCIS-Senior-Projects/WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0">Github</a>
     </div>
 
+    <!-- Abstract Data Structure Section -->
+    <div id="adts" class="adts_section">
+        <div class="container">
+            <div class="row row-m-t">
+                <div class="col-sm-12">
+                    <h1>Abstract Data Structures</h1>
+                </div>
+            </div>
+            <div class="row row-m-t row-p-b">
+                <div class="col-sm-6">
+                    <img src="assets/images/stack.png" alt="Stack image" class="img-responsive center-block">
+                </div>
+                <div class="colo-sm-6">
+                    <h2>Stack</h2>
+                    <p>
+                        A Stack is a data structure which follows an order in which its operations are performed. The order is typically LIFO, Last In First Out. The three staple operations performed on a stack are:
+                    </p>
+                    <dl>
+                        <dt>Push</dt>
+                        <dd>Adds an item to the top of the stack. If the Stack is full it should return an error.</dd>
+                        <dt>Pop</dt>
+                        <dd>Removes the top element of the stack. If the Stack is empty it should return an error.</dd>
+                        <dt>isEmpty</dt>
+                        <dd>Returns true if stack is empty, else false.</dd>
+                    </dl>
+                    <div class="text-center">
+                        <a class="btn btn-warning" role="button" href="views/Stack.html">Enter Stack VR Scene</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sorting Algorithms Section -->
+    <div id="sorting" class="algo_section">
+        <div class="container">
+            <div class="row row-m-t">
+                <div class="col-sm-12 text-center">
+                    <h1>Sorting Algorithms</h1>
+                </div>
+            </div>
+            <div class="row row-m-t row-p-b">
+                <div class="col-sm-6">
+                    <img src="assets/images/selection.png" alt="Temporary sort image" class="img-responsive center-block">
+                </div>
+                <div class="col-sm-6">
+                    <h2>Selection Sort</h2>
+                    <p>
+                        The Selection sort algorithm sorts an array by repeatedly finding the minimum element(considering ascending order) from unsorted part and putting it at the beginning. The Algorithm maintains two subarrays in a given array.
+                    </p>
+                    <ol>
+                        <li>The Subarray which is already sorted.
+                        </li>
+                        <li>
+                            Remaining subarray which is unsorted.
+                        </li>
+                    </ol>
+                    <p>
+                        In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
+                    </p>
+                    <div class="text-center">
+                        <a class="btn btn-warning" role="button" href="views/SelectionSort.html">Enter Selection Sort VR Scene</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About and Contact Section Section -->
+    <div id="about" class="about_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-center"> Objective of the Project</h1>
+                    <p class="text-center p-mrg-bottomTop">
+                        This team will look into innovative ways to develop interactions for virtual and augmented reality using equipment such as the HoloLens and the Vive. 
+
+                        One particular domain is Education. We will use the web, including WebVR, Rust, and Javascript (possibly node.js too)
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="http://vip.fiu.edu">
+                        <img src="assets/images/FIU_VIP.jpg" alt="FIU VIP logo" class="img-responsive center-block p-mrg-bottomTop">
+                    </a>
+                </div>
+                <div class="col-sm-6 p-mrg-bottomTop">
+                    <p>
+                        The Vertically Integrated Projects (VIP) program aims to involve everyone on campus in innovation. VIP unites undergraduate education and faculty research in a team-based context. Undergraduate VIP students earn academic credits, while faculty and graduate students benefit from the design/discovery efforts of their teams.
+                    </p>
+                    <p>
+                        VIP was funded for $5 million by Helmsley Foundation to GeorgiaTech. Florida International University (FIU) have a sub-award from GeorgiaTech for ~$270K and is a proud member of the VIP growing consortium of universities. The VIP @ FIU project started in Jan. 2015 and will continue until December 2017.
+                    </p>
+                </div>
+            </div>
+            <div id="hid" class="row row-m-t row-m-b">
+                <div class="col-sm-6">
+                    <a href="http://openhid.com/">
+                        <img src="assets/images/openhid-logo.png" alt="OpenHID logo" class="img-responsive center-block width_sevenfive">
+                    </a>
+                </div>
+                <div class="col-sm-6 p-mrg-bottomTop">
+                    <p>
+                        OpenHID Lab, founded in January 2015, is dedicated to the research and development of 3D User Interfaces, Virtual Environments, 3D Navigation, Visualization Systems, Gesture Recognition, Modern Framework Development, and Input Devices, among other research interest we have. In general, we concentrate in looking at user interaction techniques and the advancement of Human-Computer Interaction.
+                    </p>
+                    <p>
+                        OpenHID Lab is part of a larger center, HPDRC, located at Florida International University in the School of Computing and Information Sciences. The lab founder and director is Francisco R. Ortega, PhD., with the executive direction of Naphtali Rishe, Ph.D.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="exit">
+        <div class="container">
+            <div class="exit section-m-t">
+                <div class="row row-m-t">
+                    <div class="col-sm text-center">
+                        <div>
+                            <a href="views/VRTest.html" class="btn btn-info">Click me to test your VR equipment and environment!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script type="text/javascript" src="build/app/scripts/index.bundle.js"></script>
   </body>
 </html>

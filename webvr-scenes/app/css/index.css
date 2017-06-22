@@ -1,12 +1,141 @@
+/* Jumbotro Overrides */
+.jumbotron  {
+    margin-bottom: 0px !important;
+    margin-top: 30px !important;
+}
+
+#hid .img-responsive {
+    max-width: 75% !important;
+}
+
+/* Global Styling */
 body {
     width: 100%;
     height: 100%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
 }
 
 html {
     width: 100%;
     height: 100%;
 }
+
+p {
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+.orangeBtn {
+    background-color: orange;
+}
+
+/* Margin and Padding Styles */
+.row-m-t{
+    margin-top: 25px;
+}
+
+.row-m-b{
+    margin-bottom: 25px;
+}
+
+.row-p-b{
+    padding-bottom: 25px;
+}
+
+.section-m-t{
+    margin-top: 20px;
+}
+
+/* image responsive limits */
+.width_sevenfive {
+    max-width: 75%;
+}
+
+
+
+/* Intro Styling Section */
+.jumbotron h1 {
+    font-size: 4.5em !important;
+    font-weight: 400;
+}
+
+/* Abstract Data Structures Styling Section */
+.adts_section {
+    background-color: rgb(244, 243, 239)
+}
+
+.adts_section h1 {
+    color: #666115;
+    text-align: center;
+    font-size: 2.75em;
+}
+
+.adts_section h2 {
+    color: #666115;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.adts_section p {
+    color: #666115;
+}
+
+.adts_section dd {
+    color: #666115;
+}
+
+
+
+/* Sorting Algorithms Styling Section */
+.algo_section {
+    background-color: rgb(216, 193, 171)
+}
+
+.algo_section h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.75em;
+}
+
+.algo_section h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.algo_section p {
+    color: white;
+}
+
+.algo_section li {
+    color: white;
+}
+
+/* About Styling Section */
+.about_section {
+    background-color: rgb(26, 24, 23)
+}
+
+.about_section h1 {
+    color: white;
+    font-size: 2.75em;
+
+}
+
+.p-mrg-bottomTop{
+    margin-bottom: 1.5em;
+    margin-top: 1.5em; 
+}
+
+.about_section p {
+    color: white;
+}
+
+/* Exit Styling Section */
+.exit {
+    background-color: #f4f3ef;
+}
+
 
 @media(min-width:767px) {
     .navbar {
@@ -26,36 +155,34 @@ The padding is very important to make sure the scrollspy picks up the right area
 of those sections to manage the look and feel of the site. */
 
 .intro-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
+    /*height: 100%;*/
+    /*padding-top: 150px;
+    text-align: center;*/
     background: #fff;
 }
 
 .adts-section {
     height: 100%;
     padding-top: 150px;
-    text-align: center;
+    /*text-align: center;*/
     background: #eee;
 }
 
 .sorting-section {
-    height: 100%;
+    height: 100%
     padding-top: 150px;
-    text-align: center;
-    background: #fff;
+    /*text-align: center;*/
+    background: #eee;
 }
 
 .about-section {
     height: 100%;
-    padding-top: 150px;
-    text-align: center;
+    /*padding-top: 150px;
+    text-align: center;*/
     background: #eee;
 }
 
-.row-m-t{
-    margin-top: 20px;
-}
+
 
 .textContainer {
     width: auto;
@@ -65,4 +192,11 @@ of those sections to manage the look and feel of the site. */
 .textContainer p {
     vertical-align: middle;
     margin-top: 10px;
+}
+
+.scrollspy-example {
+    position: relative;
+    height: 200px;
+    margin-top: .5rem;
+    overflow: auto;
 }
