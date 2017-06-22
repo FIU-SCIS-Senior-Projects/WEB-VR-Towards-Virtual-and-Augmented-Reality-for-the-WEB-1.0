@@ -49,17 +49,17 @@
     <!-- Intro Section -->
     <div id="intro" class="jumbotron text-center">
         <h1 class="display-3"> WebVR Scenes</h1>
-        <p class = "text-center">
-            WebVR experiences for enhnacing Computer Science Education
-        </p>
+        <h3 class = "text-center">
+            WebVR Experiences for Enhnacing Computer Science Education
+        </h3>
         <a class="btn btn-primary" role="button" href="https://github.com/FIU-SCIS-Senior-Projects/WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0">Github</a>
     </div>
 
     <!-- Abstract Data Structure Section -->
     <div id="adts" class="adts_section">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12 text-center">
+            <div class="row row-m-t">
+                <div class="col-sm-12">
                     <h1>Abstract Data Structures</h1>
                 </div>
             </div>
@@ -68,6 +68,7 @@
                     <img src="assets/images/stack.png" alt="Stack image" class="img-responsive center-block">
                 </div>
                 <div class="colo-sm-6">
+                    <h2>Stack</h2>
                     <p>
                         A Stack is a data structure which follows an order in which its operations are performed. The order is typically LIFO, Last In First Out. The three staple operations performed on a stack are:
                     </p>
@@ -90,7 +91,7 @@
     <!-- Sorting Algorithms Section -->
     <div id="sorting" class="algo_section">
         <div class="container">
-            <div class="row">
+            <div class="row row-m-t">
                 <div class="col-sm-12 text-center">
                     <h1>Sorting Algorithms</h1>
                 </div>
@@ -100,6 +101,7 @@
                     <img src="assets/images/selection.png" alt="Temporary sort image" class="img-responsive center-block">
                 </div>
                 <div class="col-sm-6">
+                    <h2>Selection Sort</h2>
                     <p>
                         The Selection sort algorithm sorts an array by repeatedly finding the minimum element(considering ascending order) from unsorted part and putting it at the beginning. The Algorithm maintains two subarrays in a given array.
                     </p>
@@ -127,7 +129,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h1 class="text-center"> Objective of the Project</h1>
-                    <p class="text-center">
+                    <p class="text-center p-mrg-bottomTop">
                         This team will look into innovative ways to develop interactions for virtual and augmented reality using equipment such as the HoloLens and the Vive. 
 
                         One particular domain is Education. We will use the web, including WebVR, Rust, and Javascript (possibly node.js too)
@@ -137,10 +139,10 @@
             <div class="row">
                 <div class="col-sm-6">
                     <a href="http://vip.fiu.edu">
-                        <img src="assets/images/FIU_VIP.jpg" alt="FIU VIP logo" class="img-responsive center-block">
+                        <img src="assets/images/FIU_VIP.jpg" alt="FIU VIP logo" class="img-responsive center-block p-mrg-bottomTop">
                     </a>
                 </div>
-                <div class="col-sm-6 textContainer">
+                <div class="col-sm-6 p-mrg-bottomTop">
                     <p>
                         The Vertically Integrated Projects (VIP) program aims to involve everyone on campus in innovation. VIP unites undergraduate education and faculty research in a team-based context. Undergraduate VIP students earn academic credits, while faculty and graduate students benefit from the design/discovery efforts of their teams.
                     </p>
@@ -149,13 +151,13 @@
                     </p>
                 </div>
             </div>
-            <div class="row row-m-t">
-                <div class="col-lg-6">
+            <div id="hid" class="row row-m-t row-m-b">
+                <div class="col-sm-6">
                     <a href="http://openhid.com/">
-                        <img src="assets/images/openhid-logo.png" alt="OpenHID logo" class="img-responsive center-block">
+                        <img src="assets/images/openhid-logo.png" alt="OpenHID logo" class="img-responsive center-block width_sevenfive">
                     </a>
                 </div>
-                <div class="col-lg-6 textContainer">
+                <div class="col-sm-6 p-mrg-bottomTop">
                     <p>
                         OpenHID Lab, founded in January 2015, is dedicated to the research and development of 3D User Interfaces, Virtual Environments, 3D Navigation, Visualization Systems, Gesture Recognition, Modern Framework Development, and Input Devices, among other research interest we have. In general, we concentrate in looking at user interaction techniques and the advancement of Human-Computer Interaction.
                     </p>
@@ -164,14 +166,22 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <a href="views/VRTest.html" class="btn btn-info">Click me to test your VR equipment and environment!</a>
+        </div>
+    </div>
+
+    <footer id="footer" class="exit">
+        <div class="container">
+            <div class="exit section-m-t">
+                <div class="row row-m-t">
+                    <div class="col-sm text-center">
+                        <div>
+                            <a href="views/VRTest.html" class="btn btn-info">Click me to test your VR equipment and environment!</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </footer>
     <script type="text/javascript" src="build/app/scripts/index.bundle.js"></script>
   </body>
 </html>

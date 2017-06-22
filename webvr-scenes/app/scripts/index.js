@@ -3,6 +3,10 @@ window.$ = window.jQuery = jQuery;
 
 global.Tether = require('tether');
 require('bootstrap');
+
+$('body').scrollspy({selector:'.scrollclass',offset:65});
+
+
 // jQuery.noConflict(true);
 
 //require('jquery.easing')(jQuery);

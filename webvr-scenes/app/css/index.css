@@ -1,12 +1,18 @@
 /* Jumbotro Overrides */
 .jumbotron  {
     margin-bottom: 0px !important;
+    margin-top: 30px !important;
+}
+
+#hid .img-responsive {
+    max-width: 75% !important;
 }
 
 /* Global Styling */
 body {
     width: 100%;
     height: 100%;
+    font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
 }
 
 html {
@@ -14,12 +20,22 @@ html {
     height: 100%;
 }
 
+p {
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
 .orangeBtn {
     background-color: orange;
 }
 
+/* Margin and Padding Styles */
 .row-m-t{
-    margin-top: 20px;
+    margin-top: 25px;
+}
+
+.row-m-b{
+    margin-bottom: 25px;
 }
 
 .row-p-b{
@@ -30,26 +46,45 @@ html {
     margin-top: 20px;
 }
 
+/* image responsive limits */
+.width_sevenfive {
+    max-width: 75%;
+}
 
 
 
+/* Intro Styling Section */
+.jumbotron h1 {
+    font-size: 4.5em !important;
+    font-weight: 400;
+}
 
 /* Abstract Data Structures Styling Section */
 .adts_section {
     background-color: rgb(244, 243, 239)
 }
 
-.adts-section h1 {
+.adts_section h1 {
+    color: #666115;
+    text-align: center;
+    font-size: 2.75em;
+}
+
+.adts_section h2 {
+    color: #666115;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.adts_section p {
     color: #666115;
 }
 
-.adts-section p {
+.adts_section dd {
     color: #666115;
 }
 
-.adts-section dd {
-    color: #666115;
-}
+
 
 /* Sorting Algorithms Styling Section */
 .algo_section {
@@ -58,6 +93,14 @@ html {
 
 .algo_section h1 {
     color: white;
+    text-align: center;
+    font-size: 2.75em;
+}
+
+.algo_section h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
 }
 
 .algo_section p {
@@ -75,12 +118,24 @@ html {
 
 .about_section h1 {
     color: white;
+    font-size: 2.75em;
 
+}
+
+.p-mrg-bottomTop{
+    margin-bottom: 1.5em;
+    margin-top: 1.5em; 
 }
 
 .about_section p {
     color: white;
 }
+
+/* Exit Styling Section */
+.exit {
+    background-color: #f4f3ef;
+}
+
 
 @media(min-width:767px) {
     .navbar {
