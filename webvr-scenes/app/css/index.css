@@ -7,6 +7,43 @@ html {
     width: 100%;
     height: 100%;
 }
+/* Abstract Data Structures Styling Section */
+.adts_section {
+    background-color: rgb(244, 243, 239)
+}
+
+.adts-section h1 {
+    color: #666115;
+}
+
+.adts-section p {
+    color: #666115;
+}
+
+.adts-section dd {
+    color: #666115;
+}
+
+/* Sorting Algorithms Styling Section */
+.algo_section {
+    background-color: rgb(216, 193, 171)
+}
+
+.algo_section h1 {
+    color: white;
+}
+
+.algo_section p {
+    color: white;
+}
+
+.algo_section li {
+    color: white;
+}
+
+.about_section {
+    background-color: rgb(26, 24, 23)
+}
 
 @media(min-width:767px) {
     .navbar {
