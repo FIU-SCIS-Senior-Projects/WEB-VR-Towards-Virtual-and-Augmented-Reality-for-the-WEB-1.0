@@ -30,14 +30,23 @@ impl Event {
 //resolution function to be applied to each input(to be specified by developer)
 #[derive(Debug, Clone)]
 pub struct Resolution{
+    pub input: Input,
+    pub funcs: Vec<String>
+
 }
 
 impl Resolution {
-    pub fn new() -> Resolution {
+    pub fn new(input: Input) -> Resolution {
         Resolution{
+            input: input,
+            funcs:  Vec::new()
+
             
         }
     }
+
+
+
 }
 
 //Struct containing the ranges of each manipulator in the device
@@ -80,6 +89,7 @@ impl Input {
         self.str_input_list.push(input);
 
     }
+
 }
 
 
@@ -87,10 +97,10 @@ impl Input {
 //based on the generic input adapter from spat_input
 
 impl InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
-    pub fn new_controller(inputs: Input, resolutions: Resolution) -> InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
+    pub fn new_controller(connection:ConnectionMode, resolutions: Resolution) -> InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
         InputAdapter{
-            connection: ConnectionMode::SDL,
-            input: inputs,
+            connection: connection,
+            input: resolutions.input.clone(),
             state: State::Idle,
             output: "".to_string(),
             resolution: resolutions,

@@ -8,7 +8,7 @@ mod spat_input;
 mod devices;
 
 use std::thread::spawn; //For threads
-use spat_input::{InputAdapter, SubInput};
+use spat_input::{InputAdapter, SubInput, ConnectionMode};
 
 use sdl2::event::{Event};
 use sdl2::controller::{Button, Axis };
@@ -17,6 +17,7 @@ use std::time::Duration;
 use devices::{mouse, controller};
 
 fn main() {
+
     // start sdl2 with everything
     let context = sdl2::init().unwrap();
     let video_context = context.video().unwrap();
@@ -71,7 +72,7 @@ fn main() {
     println!("Controller mapping: {}", controller.mapping());
 
     let mut inputs = controller::Input::new();
-    let mut resolutions = controller::Resolution::new();
+    let mut resolutions = controller::Resolution::new(inputs);
 
     //Simulating adding inputs as a developer. The developer would first need
     //to find out which inputs are available
@@ -80,15 +81,19 @@ fn main() {
     //creates a subinput for the y-axis
     let left_y_axis = SubInput::new_int(-32768, 32768);
     let a_button = "A".to_string();
-    inputs.add_sub_input(left_y_axis);
-    inputs.add_letter_input(a_button);
+    resolutions.input.add_sub_input(left_y_axis);
+    resolutions.input.add_letter_input(a_button);
 
     
 
 
     let mut events = context.event_pump().unwrap();
     let mut m = InputAdapter::new_mouse();
-    let mut c = InputAdapter::new_controller(inputs, resolutions);
+
+    //Creating a new controller. By providing the resolution, we are also providing
+    //the inputs that are linked to each rosoultion function. The output is gnerated
+    //from the functions and the staes are automatically provided from connection
+    let mut c = InputAdapter::new_controller(ConnectionMode::SDL,resolutions);
 
 
     // loop until we receive a QuitEvent
@@ -97,7 +102,6 @@ fn main() {
         for event in events.poll_iter() {
             match event {
                 Event::ControllerAxisMotion{ axis, value: val, .. } => {
-                    //Dead zone is the sensitivity of the joystick
                     devices::handle_controller_axis(&mut c, axis, val);
                 },
                 Event::ControllerButtonDown{ button, .. } => {
