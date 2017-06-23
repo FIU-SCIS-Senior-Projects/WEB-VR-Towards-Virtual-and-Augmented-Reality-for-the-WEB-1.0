@@ -1,30 +1,25 @@
-//add jquery
+var Stack = function(){
+  this.top = null;
+  this.size = 0;
+};
 
-var jQuery = require('jquery');
+var Node = function(data){
+  this.data = data;
+  this.previous = null;
+};
 
+Stack.prototype.push = function(data) {
+  var node = new Node(data);
 
-window.$ = window.jQuery = jQuery;
+  node.previous = this.top;
+  this.top = node;
+  this.size += 1;
+  return this.top;
+};
 
-//add bootstrap
-require('bootstrap');
-jQuery.noConflict(true);
-
-console.log('stack page script')
-
-var pinkBox = $("#pink");
-
-var popEl = document.querySelector('pop');
-var popCount = 0;
-var emphasizeToggle = false;
-
-pinkBox.addEventListener('componentchanged', function(evt) {
-  if (evt.detail.name === 'position' && popCount < 6 && emphasizeToggle === false) {
-    var event = new Event('emphasize');
-    popCount++;
-    emphasizeToggle = true;
-  }
-})
-
-popEl.addEventListener('animation__[pop]-complete', function(evt){
-  emphasizeToggle = false;
-})
+Stack.prototype.pop = function() {
+  temp = this.top;
+  this.top = this.top.previous;
+  this.size -= 1;
+  return temp;
+};
