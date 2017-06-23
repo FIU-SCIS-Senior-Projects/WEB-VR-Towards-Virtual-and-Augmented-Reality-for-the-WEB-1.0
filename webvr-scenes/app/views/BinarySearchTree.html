@@ -7,7 +7,7 @@
     <script src="../build/app/scripts/aframe.bundle.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene id="scene">
 
       <a-assets>
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
@@ -27,81 +27,90 @@
         cursor-visible = "true"
         cursor-scale = "2"
         cursor-color = "#0095DD"
-        cursor-opacity = "0.5">
+        cursor-opacity = "0.5"
+        >
       </a-camera>
 
       <a-entity
         mixin = "sphere yellow"
         position = " 0 2 2"
-        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16">
+        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16"
+        animation__shiftOne = 
+          "property: position; delay: 5000; dur: 500; dir: normal; from: 0 2 2; to: 0 7 2"
+        >
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-2 2 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text:10">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text:10"
+        animation__shiftTwo = 
+        "property: position; dur: 500; dir: normal; from: -2 2 2; to -2 7 2">
         </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-4 2 2"
-        textwrap = "textAlighn: center; x: 60; y:120; font: 40px serif; text: 53">
+        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: 53">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-6 2 2"
-        textwrap = "textAlighn: center; x: 60; y:120; font: 40px serif; text: -40">
+        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: -40">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "0 4 2"
+        position = "-8 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -31">
       </a-entity>
       
       <a-entity
         mixin = "sphere yellow"
-        position = "-2 4 2"
+        position = "-10 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -58">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-4 4 2"
+        position = "0 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -65">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-6 4 2"
+        position = "-2 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 51">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "0 6 2"
+        position = "-4 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 15">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-2 6 2"
+        position = "-6 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 52">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-4 6 2"
+        position = "-8 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-6 6 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30">
+        position = "-10 4 2"
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -20">
       </a-entity>
     </a-scene>
-  
+
+     <script src="../build/app/scripts/BinarySearchTree.bundle.js"></script>
+ 
   </body>
+
 </html>
