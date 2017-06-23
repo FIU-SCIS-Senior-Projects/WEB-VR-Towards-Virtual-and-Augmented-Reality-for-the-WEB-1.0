@@ -1,30 +1,48 @@
-//add jquery
-
-var jQuery = require('jquery');
+console.log('Stack Script');
 
 
-window.$ = window.jQuery = jQuery;
+var Stack = function(){
+  this.top = null;
+  this.size = 0;
+};
 
-//add bootstrap
-require('bootstrap');
-jQuery.noConflict(true);
+var Node = function(data){
+  this.data = data;
+  this.previous = null;
+};
 
-console.log('stack page script')
+Stack.prototype.push = function(data) {
+  var node = new Node(data);
 
-var pinkBox = $("#pink");
+  node.previous = this.top;
+  this.top = node;
+  this.size += 1;
+  return this.top;
+};
 
-var popEl = document.querySelector('pop');
-var popCount = 0;
-var emphasizeToggle = false;
+Stack.prototype.pop = function() {
+  temp = this.top;
+  this.top = this.top.previous;
+  this.size -= 1;
+  return temp;
+};
 
-pinkBox.addEventListener('componentchanged', function(evt) {
-  if (evt.detail.name === 'position' && popCount < 6 && emphasizeToggle === false) {
-    var event = new Event('emphasize');
-    popCount++;
-    emphasizeToggle = true;
-  }
-})
+//Creates stack for the scene
 
-popEl.addEventListener('animation__[pop]-complete', function(evt){
-  emphasizeToggle = false;
-})
+function createStack(){
+
+sstack = new Stack();
+
+}
+
+function pushScene(sstack){
+
+var data = document.getElementById("input").value ;
+
+sstack.push(data) ;
+}
+
+function popScene(){
+
+sstack.pop() ;
+}

@@ -1,4 +1,6 @@
 var AFRAME = require('aframe');
+var physics = require('aframe-physics-system');
+physics.registerAll();
 
 var gradientSky = require('aframe-gradient-sky').component;
 var draw = require('aframe-draw-component').component;
