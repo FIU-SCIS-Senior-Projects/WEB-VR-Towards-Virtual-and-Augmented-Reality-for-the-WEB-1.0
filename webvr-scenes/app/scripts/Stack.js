@@ -1,3 +1,6 @@
+console.log('Stack Script');
+
+
 var Stack = function(){
   this.top = null;
   this.size = 0;
@@ -23,3 +26,23 @@ Stack.prototype.pop = function() {
   this.size -= 1;
   return temp;
 };
+
+//Creates stack for the scene
+
+function createStack(){
+
+sstack = new Stack();
+
+}
+
+function pushScene(sstack){
+
+var data = document.getElementById("input").value ;
+
+sstack.push(data) ;
+}
+
+function popScene(){
+
+sstack.pop() ;
+}

@@ -44,22 +44,22 @@ Queue.prototype.dequeue = function() {
 
 
 function create(squeue){
-squeue = new Queue() ;
+scenequeue = new Queue() ;
 //alert("Queue Scene created!");
 }
 
 
-function eqscene(arg1){
+function eqscene(scenequeue){
 var data = document.getElementById("input").value ;
 //alert(data);
-arg1.enqueue(data) ;
+scenequeue.enqueue(data) ;
 
 
-alert(arg1.toSource());
+alert(scenequeue.toSource());
 }
 
-function dqscene(arg1){
+function dqscene(scenequeue){
 
-arg1.dequeue();
-alert(arg1.toSource());
+scenequeue.dequeue();
+alert(scenequeue.toSource());
 }
