@@ -43,10 +43,7 @@ Queue.prototype.dequeue = function() {
 };
 
 
-var squeue ;
-
-
-function create(){
+function create(squeue){
 squeue = new Queue() ;
 //alert("Queue Scene created!");
 }
@@ -66,6 +63,3 @@ function dqscene(arg1){
 arg1.dequeue();
 alert(arg1.toSource());
 }
-
-
-
