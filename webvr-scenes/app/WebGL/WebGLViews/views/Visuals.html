@@ -63,27 +63,30 @@
         return compoundBody;
       }
 
-      // Spheres
+      // Stack Scene
       demo.addScene("Stack",function(){
-          var world = setupWorld(demo);
+      
+	var world = setupWorld(demo);
 
-          // Sphere 1
-          var sphereShape = new CANNON.Sphere(size);
-          var b1 = new CANNON.Body({ mass: 5 });
-          b1.addShape(sphereShape);
-          b1.position.set(0,0,3*size);
+         
+    var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+         
+	var i ; 
+	
+	for(i = 0 ; i < 20 ; i++){
+                   
+	 var b1 = new CANNON.Body({ mass: 5 });
+          b1.addShape(boxShape);
+          b1.position.set(0,i*2*(size), 0);
           world.addBody(b1);
           demo.addVisual(b1);
 
-          // Sphere 2
-          var b2 = new CANNON.Body({ mass: 5 });
-          b2.addShape(sphereShape);
-          b2.position.set(0,0,1*size);
-          world.addBody(b2);
-          demo.addVisual(b2);
-        });
+	}
 
-      // Sphere/plane
+
+     });
+
+      // Queue Scene
       demo.addScene("Queue",function(){
           var world = setupWorld(demo);
 
