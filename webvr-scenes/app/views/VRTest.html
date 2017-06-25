@@ -14,32 +14,6 @@ random-color></a-entity>
 
 
 
-
-
-var squeue ;
-
-
-function create(){
-squeue = new Queue() ;
-//alert("Queue Scene created!");
-}
-
-
-function eqscene(arg1){
-var data = document.getElementById("input").value ;
-//alert(data);
-arg1.enqueue(data) ;
-
-
-alert(arg1.toSource());
-}
-
-function dqscene(arg1){
-
-arg1.dequeue();
-alert(arg1.toSource());
-}
-</script>
 <!--
 <td>
 	<input value="" id="input" size="6" type="Text"
