@@ -23,26 +23,25 @@
       <a-cylinder id="ground" src="#groundTexture" radius="30" height = "0.1"></a-cylinder>
 
       <a-camera
-        position = "0 0 20"
+        position = "-2 0 20"
         cursor-visible = "true"
         cursor-scale = "2"
         cursor-color = "#0095DD"
         cursor-opacity = "0.5"
+        animation__shiftUp =
+          "property: position; delay: 3000; dur: 1500; dir:normal; from: -2 0 20; to: -2 12 20"
         >
       </a-camera>
 
       <a-entity
         mixin = "sphere yellow"
-        position = " 0 2 2"
-        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16"
-        animation__shiftOne = 
-          "property: position; delay: 5000; dur: 500; dir: normal; from: 0 2 2; to: 0 7 2"
-        >
+        position = " 4 2 2"
+        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-2 2 2"
+        position = "2 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text:10"
         animation__shiftTwo = 
         "property: position; dur: 500; dir: normal; from: -2 2 2; to -2 7 2">
@@ -50,61 +49,61 @@
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-4 2 2"
+        position = "0 2 2"
         textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: 53">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-6 2 2"
+        position = "-2 2 2"
         textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: -40">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-8 2 2"
+        position = "-4 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -31">
       </a-entity>
       
       <a-entity
         mixin = "sphere yellow"
-        position = "-10 2 2"
+        position = "-6 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -58">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "0 4 2"
+        position = "4 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -65">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-2 4 2"
+        position = "2 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 51">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-4 4 2"
+        position = "0 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 15">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-6 4 2"
+        position = "-2 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 52">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-8 4 2"
+        position = "-4 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
-        position = "-10 4 2"
+        position = "-6 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -20">
       </a-entity>
     </a-scene>
