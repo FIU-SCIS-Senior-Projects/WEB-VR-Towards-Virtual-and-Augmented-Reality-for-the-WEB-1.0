@@ -23,88 +23,171 @@
       <a-cylinder id="ground" src="#groundTexture" radius="30" height = "0.1"></a-cylinder>
 
       <a-camera
-        position = "-2 0 20"
+        position = "-2 0 16"
         cursor-visible = "true"
         cursor-scale = "2"
         cursor-color = "#0095DD"
         cursor-opacity = "0.5"
         animation__shiftUp =
-          "property: position; delay: 3000; dur: 1500; dir:normal; from: -2 0 20; to: -2 12 20"
+          "property: position; delay: 3000; dur: 1500; dir:normal; from: -2 0 16; to: -2 12 16"
         >
       </a-camera>
 
       <a-entity
         mixin = "sphere yellow"
         position = " 4 2 2"
-        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16">
+        textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 4 2 2; to: -1 18 2"
+        animation__1_shiftRight =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: 5 16 2"
+        animation__2_shiftLeft = 
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: 5 16 2; to: 2 15 2"
+        animation__3_shiftLeft =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: 2 15 2; to: 1 13 2"
+        animation__4_intoSpot =
+          "property: position; delay: 10000; dur: 1000; dir: normal; from: 1 13 2; to: -1 11 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "2 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text:10"
-        animation__shiftTwo = 
-        "property: position; dur: 500; dir: normal; from: -2 2 2; to -2 7 2">
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 2 2 2; to: -1 18 2"
+        animation__1_shiftRight =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: 5 16 2"
+        animation__2_shiftLeft =
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: 5 16 2; to: 2 15 2"
+        animation__3_intoSpot =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: 2 15 2; to: 1 13 2">
         </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "0 2 2"
-        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: 53">
+        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: 53"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 0 2 2; to: -1 18 2"
+        animation__1_shiftRight =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: 5 16 2"
+        animation__2_intoSpot =
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: 5 16 2; to: 7.5 15 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-2 2 2"
-        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: -40">
+        textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: -40"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: -2 2 2; to: -1 18 2"
+        animation__1_shiftLeft =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: -7 16 2"
+        animation__2_shiftLeft =
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: -7 16 2; to: -9 15 2"
+        animation__3_shiftRight =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: -9 15 2; to: -7 13 2"
+        animation__4_shiftRight =
+          "property: position; delay: 10000; dur: 1000; dir: normal; from: -7 13 2; to -6 11 2"
+        animation__5_intoSpot = 
+          "property: position; delay: 11000; dur: 1000; dir: normal; from: -6 11 2; to: -7 9 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-4 2 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -31">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -31"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir:normal; from: -4 2 2; to: -1 18 2"
+        animation__1_shiftLeft =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: -7 16 2"
+        animation__2_intoLeft =
+          "property: position; delay: 8000: dur: 1000; dir: normal; from: -7 16 2; to: -9 15 2"
+        animation__3_shiftRight =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: -9 15 2; to: -7 13 2"
+        animation__4_intoSpot =
+          "property: position; delay: 10000; dur: 1000; dir: normal; from: -7 13 2; to: -6 11 2">
       </a-entity>
       
       <a-entity
         mixin = "sphere yellow"
         position = "-6 2 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -58">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -58"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal: from: -6 2 2; to: -1 18 2"
+        animation__1_shiftLeft =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: -7 16 2"
+        animation__2_shiftLeft =
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: -7 16 2; to: -9 15 2"
+        animation__3_intoSpot =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: -9 15 2; to: -7 13 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "4 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -65">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -65"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 4 4 2; to: -1 18 2"
+        animation__1_insert =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: -7 16 2"
+        animation__2_intoSpot =
+          "property: position; delay: 8000: dur: 1000; dir: normal; from: -7 16 2; to: -9 15 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "2 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 51">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 51"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 2 4 2; to: -1 18 2"
+        animation__1_shiftRight =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2 to: 5 16 2"
+        animation__2_shiftLeft = 
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: 5 16 2; to: 2 15 2"
+        animation__3_intoSpot =
+          "property: position; delay: 9000; dur: 1000; dir: normal; from: 2 15 2; to: 4 13 2"
+        >
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "0 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 15">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 15"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: 0 4 2; to: -1 18 2"
+        animation__1_shiftRight =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: 5 16 2"
+        animation__2_intoSpot =
+          "property: position; delay: 8000; dur: 1000; dir: normal; from: 5 16 2; to: 2 15 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-2 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 52">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 52"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: -2 4 2; to: -1 17 2"
+        animation__1_intoSpot =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: 5 16 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-4 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: -4 4 2; to: -1 18 2"
+        animation__1_intoSpot =
+          "property: position; delay: 7000; dur: 1000; dir: normal; from: -1 18 2; to: -7 16 2">
       </a-entity>
 
       <a-entity
         mixin = "sphere yellow"
         position = "-6 4 2"
-        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -20">
+        textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -20"
+        animation__0_insert =
+          "property: position; delay: 6000; dur: 1000; dir: normal; from: -6 4 2; to: -1 18 2">
       </a-entity>
     </a-scene>
 
