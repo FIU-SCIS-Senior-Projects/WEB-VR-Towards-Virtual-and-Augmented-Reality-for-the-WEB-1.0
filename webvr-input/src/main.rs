@@ -63,13 +63,6 @@ fn main() {
         }
     }
 
-    let controller =
-        match controller {
-            Some(c) => c,
-            None     => panic!("Couldn't open any controller"),
-        };
-
-    println!("Controller mapping: {}", controller.mapping());
 
     let mut inputs = controller::Input::new();
     let mut resolutions = controller::Resolution::new(inputs);
