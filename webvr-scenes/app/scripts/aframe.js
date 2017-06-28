@@ -6,6 +6,7 @@ var gradientSky = require('aframe-gradient-sky').component;
 var draw = require('aframe-draw-component').component;
 var textwrap = require('aframe-textwrap-component').component;
 var animation = require('aframe-animation-component');
+var look_at = require('aframe-look-at-component');
 
 AFRAME.registerComponent("draw", draw);
 AFRAME.registerComponent("textwrap", textwrap);
