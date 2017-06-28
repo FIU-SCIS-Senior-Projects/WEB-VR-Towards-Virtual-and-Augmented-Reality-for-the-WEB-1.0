@@ -14,6 +14,7 @@
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
 
         <a-mixin id="sphere" geometry = "primitive: sphere; radius: 0.5"></a-mixin>
+        <a-mixin id="box" geometry = "primitive: box"></a-mixin>
         <a-mixin id="yellow" draw = "background: yellow"></a-mixin>
       </a-assets>
 
@@ -23,6 +24,7 @@
       <a-cylinder id="ground" src="#groundTexture" radius="30" height = "0.1"></a-cylinder>
 
       <a-camera
+        id = "user"
         position = "-1 0 16"
         cursor-visible = "true"
         cursor-scale = "2"
@@ -35,6 +37,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = " 4 2 2"
         textwrap = "textAlign: center; x:60; y:128; font: 40px serif; text: -16"
         animation__0_insert =
@@ -51,6 +54,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user" 
         position = "2 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text:10"
         animation__0_insert =
@@ -65,6 +69,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "0 2 2"
         textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: 53"
         animation__0_insert =
@@ -77,6 +82,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-2 2 2"
         textwrap = "textAlign: center; x: 60; y:120; font: 40px serif; text: -40"
         animation__0_insert =
@@ -95,6 +101,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-4 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -31"
         animation__0_insert =
@@ -111,6 +118,7 @@
       
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-6 2 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -58"
         animation__0_insert =
@@ -125,6 +133,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "4 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -65"
         animation__0_insert =
@@ -137,6 +146,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "2 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 51"
         animation__0_insert =
@@ -152,6 +162,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "0 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 15"
         animation__0_insert =
@@ -164,6 +175,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-2 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: 52"
         animation__0_insert =
@@ -174,6 +186,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-4 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -30"
         animation__0_insert =
@@ -184,6 +197,7 @@
 
       <a-entity
         mixin = "sphere yellow"
+        look-at="#user"
         position = "-6 4 2"
         textwrap = "textAlign: center; x:60; y:120; font:40px serif; text: -20"
         animation__0_insert =
