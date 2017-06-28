@@ -35,14 +35,29 @@ sstack = new Stack();
 
 }
 
-function pushScene(sstack){
+function pushScene(stackName, data){
 
-var data = document.getElementById("input").value ;
+alert('Call successful');
+// var data = document.getElementById("input").value ;
+/*
+var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+//sceneStack.push() ;
+var b1 = new CANNON.Body({ mass: 5 });
+b1.addShape(boxShape);
+b1.position.set(0,i*2*(size), 0);
+world.addBody(b1);
+sceneStack.push(b1) ;
+demo.addVisual(b1);
+*/
 
-sstack.push(data) ;
-}
+};
 
 function popScene(){
 
 sstack.pop() ;
-}
+};
+
+function refTest(){
+alert('Script ref correct');
+
+};

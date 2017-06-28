@@ -15,6 +15,7 @@
     <script src="../libs/Detector.js"></script>
     <script src="../libs/Stats.js"></script>
     <script src="../libs/smoothie.js"></script>
+    <script src="../../../scripts/Stack.js"></script>
 
     <script>
 
@@ -63,82 +64,167 @@
         return compoundBody;
       }
 
+
+var j = 0 ; // global counter for stack
+
+var k = 0 ; // global counter for enqueue
+
+var h = 0 ; // head pointer for queue
+
       // Stack Scene
-      demo.addScene("Stack",function(){
-      
+demo.addScene("Stack Push",function(){
+
+j++;
+
+
 	var world = setupWorld(demo);
 
-         
-    var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
-         
-	var i ; 
-	
-	for(i = 0 ; i < 20 ; i++){
-                   
-	 var b1 = new CANNON.Body({ mass: 5 });
-          b1.addShape(boxShape);
-          b1.position.set(0,i*2*(size), 0);
-          world.addBody(b1);
-          demo.addVisual(b1);
+ var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
+  var sceneStack = new Stack();
+
+  //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+
+	var i  ; // counter for amount of boxes in the scene
+
+
+//  pushScene(sceneStack, boxShape, size, mass);
+
+
+// Below is a test loop to make sure that the boxes get created correctly
+
+
+	for(i = 0 ; i < j ; i++){
+
+	        var b1 = new CANNON.Body({ mass: 5 });
+          b1.addShape(boxShape);
+          b1.position.set(0,i*(-2)*(size), 0);
+          world.addBody(b1);
+          sceneStack.push(3) ;
+          demo.addVisual(b1);
+        //  scene.remove(b1) ;
 	}
 
 
      });
 
-      // Queue Scene
-      demo.addScene("Queue",function(){
+      // Stack Pop Scene
+      demo.addScene("Stack Pop",function(){
+        if(j === 0){
+
+          alert('Stack is empty!');
+
+        } else{
+          j--;
+
           var world = setupWorld(demo);
 
-          // Sphere 1
-          var sphereShape = new CANNON.Sphere(size);
-          var b1 = new CANNON.Body({ mass: 5 });
-          b1.addShape(sphereShape);
-          b1.position.set(0, 0, 3*size);
-          world.addBody(b1);
-          demo.addVisual(b1);
-        });
-
-      // Sphere / box side
-      demo.addScene("Hash-Table",function(){
           var world = setupWorld(demo);
 
-          var boxShape = new CANNON.Box(new CANNON.Vec3(size,size,size));
-          var sphereShape = new CANNON.Sphere(size);
+         var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
-          // Box
-          var b1 = new CANNON.Body({mass: 5});
-          b1.addShape(boxShape);
-          b1.position.set(0,0,1*size);
-          world.addBody(b1);
-          demo.addVisual(b1);
 
-          // Sphere
-          var b2 = new CANNON.Body({ mass: 5 });
-          b2.addShape(sphereShape);
-          b2.position.set(0,0,3*size);
-          world.addBody(b2);
-          demo.addVisual(b2);
+
+          var i ;
+          	for(i = 0 ; i < j ; i++){
+
+          	        var b1 = new CANNON.Body({ mass: 5 });
+                    b1.addShape(boxShape);
+                    b1.position.set(0,i*(-2)*(size), 0);
+                    world.addBody(b1);
+                    demo.addVisual(b1);
+
+                }
+                  }
+
         });
 
-      demo.addScene("Singly Linked List",function(){
+      // Enqueue Scene
+      demo.addScene("Queue Enqueue",function(){
+
+          k++;
+
+        	var world = setupWorld(demo);
+
+         var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+          //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+
+        	var i  ; // counter for amount of boxes in the scene
+
+
+        //  pushScene(sceneStack, boxShape, size, mass);
+
+
+        // Below is a test loop to make sure that the boxes get created correctly
+
+
+        	for(i = h ; i < k ; i++){
+
+        	        var b1 = new CANNON.Body({ mass: 5 });
+                  b1.addShape(boxShape);
+                  b1.position.set(0,i*(-2)*(size), 0);
+                  world.addBody(b1);
+                  demo.addVisual(b1);
+
+                //  scene.remove(b1) ;
+        	}
+
+          for( i = 0 ; i < h ; i++){
+                 var p = new CANNON.Body({ mass: 1 });
+
+                 p.addShape(new CANNON.Particle());
+                 p.position.set(0,i*(-2)*size,0);
+
+                 world.addBody(p);
+                 demo.addVisual(p);
+
+           }
+
+        });
+
+      demo.addScene("Dequeue",function(){
+
+          if(h === k){
+
+            alert('Nothing to Dequeue! Queue is empty');
+
+          }
+
+           h++;
+
           var world = setupWorld(demo);
 
-          // Sphere
-          var sphereShape = new CANNON.Sphere(size*0.5);
-          var b = new CANNON.Body({ mass: 5 });
-          b.addShape(sphereShape);
-          b.position.set(-size, 0, 6*size);
-          world.addBody(b);
-          demo.addVisual(b);
+          var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+           //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
-          var compoundBody = createCompound(mass);
-          compoundBody.position.set(0,0,size*3);
-          world.addBody(compoundBody);
-          demo.addVisual(compoundBody);
+          var i  ; // counter for amount of boxes in the scene
+
+
+             for(i = h ; i < k ; i++){
+
+                  	var b1 = new CANNON.Body({ mass: 5 });
+                    b1.addShape(boxShape);
+                    b1.position.set(0,i*(-2)*(size), 0);
+                    world.addBody(b1);
+                    demo.addVisual(b1);
+
+
+                  	}
+
+             for( i = 0 ; i < h ; i++){
+                    var p = new CANNON.Body({ mass: 1 });
+
+                    p.addShape(new CANNON.Particle());
+                    p.position.set(0,i*(-2)*size,0);
+
+                    world.addBody(p);
+                    demo.addVisual(p);
+
+              }
+
         });
 
-      demo.addScene("Double Linked List",function(){
+      demo.addScene("Polytest",function(){
           var world = setupWorld(demo);
 
           // Sphere
@@ -149,12 +235,13 @@
           world.addBody(b);
           demo.addVisual(b);
 
-          var shape = createTetra();//createBoxPolyhedron(size);
+          var shape = createTetra();
           var b1 = new CANNON.Body({ mass: 5 });
           b1.addShape(shape);
           b1.position.set(0,0,1*size);
           world.addBody(b1);
           demo.addVisual(b1);
+
         });
 
       demo.addScene("Binary Search Tree",function(){
