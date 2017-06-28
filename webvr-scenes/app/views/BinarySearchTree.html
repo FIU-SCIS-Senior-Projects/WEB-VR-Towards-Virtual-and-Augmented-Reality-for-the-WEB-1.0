@@ -34,7 +34,9 @@
           "property: position; delay: 3000; dur: 1500; dir:normal; from: -1 0 14; to: -1 12 14"
         >
       </a-camera>
-      <!--<a-entity>
+
+      <!--20 to -30-->
+      <a-entity>
         <a-animation  attribute = "visible"
                       dur="0"
                       delay="0"
@@ -44,7 +46,28 @@
         ></a-animation>
         <a-animation  attribute = "visible"
                       dur="0"
-                      delay="8000"
+                      delay="13250"
+                      from="false"
+                      to="true"
+                      repeat = "indefinite">
+        </a-animation>
+        <a-tube path="-1 18 2, -6 16 2" 
+                radius="0.10" 
+                material="color:cyan" >
+        </a-tube>
+      </a-entity>
+      <!-- -20 to 52-->
+      <a-entity>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="0"
+                      from="true"
+                      to="false"
+                      repeat="0"
+        ></a-animation>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="17250"
                       from="false"
                       to="true"
                       repeat = "indefinite">
@@ -53,8 +76,49 @@
                 radius="0.10" 
                 material="color:cyan" >
         </a-tube>
-      </a-entity>-->
-      
+      </a-entity>
+      <!-- 52 to 15-->
+      <a-entity>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="0"
+                      from="true"
+                      to="false"
+                      repeat="0"
+        ></a-animation>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="22250"
+                      from="false"
+                      to="true"
+                      repeat = "indefinite">
+        </a-animation>
+        <a-tube path="4 16 2, 2 14 2" 
+                radius="0.10" 
+                material="color:cyan" >
+        </a-tube>
+      </a-entity>
+      <!-- 15 to 51 -->
+      <a-entity>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="0"
+                      from="true"
+                      to="false"
+                      repeat="0"
+        ></a-animation>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="28250"
+                      from="false"
+                      to="true"
+                      repeat = "indefinite">
+        </a-animation>
+        <a-tube path="2 14 2, 4 12 2" 
+                radius="0.10" 
+                material="color:cyan" >
+        </a-tube>
+      </a-entity>
       <!--
         Insert Twelfth
         Value: -16
@@ -296,6 +360,7 @@
 
       <!--
         Insert First
+        Value: -20
         animation__0: start @ 6000 end@ 9,000
         -->
       <a-entity
