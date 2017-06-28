@@ -14,7 +14,7 @@
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
 
         <a-mixin id="sphere" geometry = "primitive: sphere; radius: 0.5"></a-mixin>
-        <a-mixin id="box" geometry = "primitive: box"></a-mixin>
+        <a-mixin id="cylinder" geometry = "primitive: cylinder" color="cyan" radius = "0.25"></a-mixin>
         <a-mixin id="yellow" draw = "background: yellow"></a-mixin>
       </a-assets>
 
@@ -35,6 +35,7 @@
         >
       </a-camera>
 
+      <a-tube path="-1 18 2, 1.5 17 2, 4 16 2" radius="0.10" material="color:cyan"></a-tube>
       <a-entity
         mixin = "sphere yellow"
         look-at="#user"
