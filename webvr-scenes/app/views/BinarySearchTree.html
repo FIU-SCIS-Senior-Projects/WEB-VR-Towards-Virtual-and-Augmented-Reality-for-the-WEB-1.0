@@ -34,8 +34,27 @@
           "property: position; delay: 3000; dur: 1500; dir:normal; from: -1 0 14; to: -1 12 14"
         >
       </a-camera>
-
-      <a-tube path="-1 18 2, 1.5 17 2, 4 16 2" radius="0.10" material="color:cyan"></a-tube>
+      <a-entity>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="0"
+                      from="true"
+                      to="false"
+                      repeat="0"
+        ></a-animation>
+        <a-animation  attribute = "visible"
+                      dur="0"
+                      delay="8000"
+                      from="false"
+                      to="true"
+                      repeat = "indefinite">
+        </a-animation>
+        <a-tube path="-1 18 2, 4 16 2" 
+                radius="0.10" 
+                material="color:cyan" >
+        </a-tube>
+      </a-entity>
+      
       <a-entity
         mixin = "sphere yellow"
         look-at="#user"
