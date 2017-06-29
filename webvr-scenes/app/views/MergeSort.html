@@ -12,9 +12,13 @@
       <img id="skyTexture" src="../assets/images/sky.jpg">
       <img id="groundTexture" src="../assets/images/floor.jpg">
 
-      <a-mixin id="cube" geometry = "primitive: box"></a-mixin>
-      <a-mixin id="orange" draw = "background: yellow"></a-mixin>
+      <a-mixin id="box" geometry = "primitive: box"></a-mixin>
+      <a-mixin id="orange" draw = "background: orange"></a-mixin>
     </a-assets>
+
+    <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+
+    <a-cylinder id="ground" src="#groundTexture" radius="30" height = "0.1"></a-cylinder>
 
     <a-camera
       id = "user"
@@ -24,6 +28,53 @@
       cursor-color = "#000000" 
     ></a-camera>
 
+    <a-entity
+      mixin = "box orange"
+      position = "-5 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+
+    <a-entity
+      mixin = "box orange"
+      position = "-3 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+
+    <a-entity
+      mixin = "box orange"
+      position = "-1 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+    
+    <a-entity
+      mixin = "box orange"
+      position = "1 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+    
+    <a-entity
+      mixin = "box orange"
+      position = "3 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+    
+    <a-entity
+      mixin = "box orange"
+      position = "5 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+    
+    <a-entity
+      mixin = "box orange"
+      position = "-7 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
+    
+    <a-entity
+      mixin = "box orange"
+      position = "7 1 0"
+      textwrap = "textAlign: center; x:60; y:128; font: 100px arial; text: 10"
+    ></a-entity>
     </a-scene>
     <script src="../build/app/scripts/MergeSort.bundle.js"></script>
   </body>
