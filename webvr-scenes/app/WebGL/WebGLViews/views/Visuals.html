@@ -15,7 +15,6 @@
     <script src="../libs/Detector.js"></script>
     <script src="../libs/Stats.js"></script>
     <script src="../libs/smoothie.js"></script>
-    <script src="../../../scripts/Stack.js"></script>
 
     <script>
 
@@ -71,6 +70,18 @@ var k = 0 ; // global counter for enqueue
 
 var h = 0 ; // head pointer for queue
 
+var hashNumber = 0 ;
+
+// create 10 x 10 hash table for seperate chaining
+var hashTable = new Array();
+for (var x = 0; x < 10; x++) {
+  hashTable[x] = new Array();
+}
+
+var hashKey ;
+
+
+
       // Stack Scene
 demo.addScene("Stack Push",function(){
 
@@ -86,6 +97,8 @@ j++;
   //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
 	var i  ; // counter for amount of boxes in the scene
+
+
 
 
 //  pushScene(sceneStack, boxShape, size, mass);
@@ -150,13 +163,8 @@ j++;
           //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
         	var i  ; // counter for amount of boxes in the scene
-
-
         //  pushScene(sceneStack, boxShape, size, mass);
-
-
         // Below is a test loop to make sure that the boxes get created correctly
-
 
         	for(i = h ; i < k ; i++){
 
@@ -187,8 +195,12 @@ j++;
           if(h === k){
 
             alert('Nothing to Dequeue! Queue is empty');
+            var world = setupWorld(demo);
 
           }
+
+
+          else{
 
            h++;
 
@@ -221,26 +233,56 @@ j++;
                     demo.addVisual(p);
 
               }
-
+            }
         });
 
-      demo.addScene("Polytest",function(){
+        /*Collision function: h(K) = K mod 10
+          All keys are perfect squares*/
+      demo.addScene("Hash-Table Insert",function(){
+
+          var cur ;
+
           var world = setupWorld(demo);
 
-          // Sphere
-          var sphereShape = new CANNON.Sphere(size*0.5);
-          var b = new CANNON.Body({ mass: 5 });
-          b.addShape(sphereShape);
-          b.position.set(0,0,6*size);
-          world.addBody(b);
-          demo.addVisual(b);
+          var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
+           //  var boxShape = new CANNON.Box(new CANNON.Vec3(size*0.5,size*0.5,size*0.5));
 
-          var shape = createTetra();
-          var b1 = new CANNON.Body({ mass: 5 });
-          b1.addShape(shape);
-          b1.position.set(0,0,1*size);
-          world.addBody(b1);
-          demo.addVisual(b1);
+          var sphereShape = new CANNON.Sphere(size*0.5);
+
+
+
+           // counter for amount of boxes in the scene
+
+           hashKey = hashNumber*hashNumber ;
+
+           var hashIndex = hashKey % 10 ;
+
+
+
+           if(hashTable[hashIndex].length < 10){
+           hashTable[hashIndex].push(hashKey) ;
+          }
+          // initialize table for seperate chaining
+          for(iter = 0 ; iter < hashTable.length ; iter++){
+
+                 var b1 = new CANNON.Body({ mass: 5 });
+                 b1.addShape(boxShape);
+                 b1.position.set(0,iter*(-2)*(size), 0);
+                 world.addBody(b1);
+                 demo.addVisual(b1);
+
+
+                for(cur = 0; cur < hashTable[iter].length ; cur++ ){
+                   // Sphere
+                   var b = new CANNON.Body({ mass: 5 });
+                   b.addShape(sphereShape);
+                   b.position.set(cur*(-2)*(size) - 2,iter*(-2)*(size),0);
+                   world.addBody(b);
+                   demo.addVisual(b);
+
+                 } // end of inner loop
+            } //end of outer loop
+                hashNumber++ ;
 
         });
 
