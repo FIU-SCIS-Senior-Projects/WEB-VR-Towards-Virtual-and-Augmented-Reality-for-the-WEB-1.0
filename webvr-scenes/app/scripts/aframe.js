@@ -6,10 +6,12 @@ var gradientSky = require('aframe-gradient-sky').component;
 var draw = require('aframe-draw-component').component;
 var textwrap = require('aframe-textwrap-component').component;
 var animation = require('aframe-animation-component');
+var look_at = require('aframe-look-at-component');
+var extras = require('aframe-extras');
 
 AFRAME.registerComponent("draw", draw);
 AFRAME.registerComponent("textwrap", textwrap);
-
+extras.primitives.registerAll();
 
 //
 
@@ -33,6 +35,25 @@ function getRandomColor() {
   }
   return color;
 }
+
+/**
+ * Listen to an event.
+ * When that event is emitted, emit an event on another entity.
+ */
+AFRAME.registerComponent('event-proxy', {
+  schema: {
+    listen: {default: ''},
+    target: {type: 'selector'},
+    emit: {default: ''}
+  },
+
+  update: function () {
+    var data = this.data;
+    this.el.addEventListener(data.listen, function () {
+      data.target.emit(data.emit);
+    });
+  }
+});
 
 
 
