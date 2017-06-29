@@ -7,13 +7,24 @@
     <script src="../build/app/scripts/aframe.bundle.js"></script>
   </head>
   <body>
-    <a-assets>
+    <a-scene>
+      <a-assets>
       <img id="skyTexture" src="../assets/images/sky.jpg">
       <img id="groundTexture" src="../assets/images/floor.jpg">
 
       <a-mixin id="cube" geometry = "primitive: box"></a-mixin>
       <a-mixin id="orange" draw = "background: yellow"></a-mixin>
     </a-assets>
+
+    <a-camera
+      id = "user"
+      position = "0 0 14"
+      cursor-visible = "true"
+      cursor-scale = "2"
+      cursor-color = "#000000" 
+    ></a-camera>
+
+    </a-scene>
     <script src="../build/app/scripts/MergeSort.bundle.js"></script>
   </body>
 </html>
