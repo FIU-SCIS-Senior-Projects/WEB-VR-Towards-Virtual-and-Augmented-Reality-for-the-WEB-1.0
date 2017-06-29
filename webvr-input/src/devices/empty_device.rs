@@ -122,6 +122,21 @@ impl Input {
     }
 }
 
+//input adapter implementation for empty device
+impl InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
+    pub fn new_empty_device() -> InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
+        InputAdapter{
+            connection: ConnectionMode::LibUSB,
+            input: Input::new(),
+            state: State::Idle,
+            output: "".to_string(),
+            resolution: Resolution::new(),
+            events: Event::new()
+        }
+    }
+}
+
+
 //take all the pieces and use them to represent the generic device
 //note much of this is borad because the device is not supported by this library.
 impl GenericResolutions for InputAdapter<ConnectionMode, Input, State, String, Resolution, Event> {
