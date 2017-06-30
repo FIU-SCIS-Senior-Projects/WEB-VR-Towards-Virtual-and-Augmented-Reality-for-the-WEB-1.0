@@ -10,16 +10,15 @@
     <a-scene id="scene">
 
       <a-assets>
-        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="../assets/images/sky.jpg">
+        <img id="groundTexture" src="../assets/images/floor.jpg">
 
         <a-mixin id="sphere" geometry = "primitive: sphere; radius: 0.5"></a-mixin>
         <a-mixin id="cylinder" geometry = "primitive: cylinder" color="cyan" radius = "0.25"></a-mixin>
         <a-mixin id="yellow" draw = "background: yellow"></a-mixin>
       </a-assets>
 
-      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30">
-      </a-sky>
+      <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
 
       <a-cylinder id="ground" src="#groundTexture" radius="30" height = "0.1"></a-cylinder>
 
