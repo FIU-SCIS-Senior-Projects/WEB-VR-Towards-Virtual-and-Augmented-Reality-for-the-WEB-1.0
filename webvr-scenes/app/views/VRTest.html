@@ -1,0 +1,93 @@
+<html>
+<body onload="create()">
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+<script src="../scripts/Queue.js"></script>
+<script src="https://unpkg.com/aframe-teleport-controls@0.2.x/dist/aframe-teleport-controls.min.js"></script>
+<script src="https://unpkg.com/aframe-controller-cursor-component@0.2.x/dist/aframe-controller-cursor-component.min.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/random-color.js"></script>
+random-color></a-entity>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/snap.js"></script>
+<script src="https://rawgit.com/ngokevin/kframe/csstricks/scenes/aincraft/components/intersection-spawn.js"></script>
+<script src="../scripts/spawner.js"></script>
+<script>
+
+
+
+
+
+var squeue ;
+
+
+function create(){
+squeue = new Queue() ;
+//alert("Queue Scene created!");
+}
+
+
+function eqscene(arg1){
+var data = document.getElementById("input").value ;
+//alert(data);
+arg1.enqueue(data) ;
+
+
+alert(arg1.toSource());
+}
+
+function dqscene(arg1){
+
+arg1.dequeue();
+alert(arg1.toSource());
+}
+</script>
+<!--
+<td>
+	<input value="" id="input" size="6" type="Text"
+</td>
+
+<td>
+
+	<button onclick="eqscene(squeue); mixin:voxel">Enqueue</button>
+</td>
+
+<td>
+	<button onclick="dqscene(squeue)">Dequeue</button>
+</td>
+-->
+
+<a-scene>
+  <a-assets>
+  <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+    <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+
+
+		<a-mixin id="voxel"
+			 geometry="primitive: box; height: 0.5; width: 0.5; depth: 0.5"
+			 material="shader: standard"
+			 random-color
+			 snap="offset: 0.25 0.25 0.25; snap: 0.5 0.5 0.5"
+		></a-mixin>
+
+
+  </a-assets>
+
+  <a-sky id="background" src="#skyTexture" theta-length="90" radius="30"></a-sky>
+
+  <a-cylinder id="ground" src="#groundTexture" radius="30" height="0.1"></a-cylinder>
+
+   <a-entity geometry="primitive: box; depth: 0.5; height: 0.5; width 0.5"
+   <!--  Box with random color. -->
+            material="shader: standard"
+            position="0 0.5 -2"
+
+
+<a-camera>
+							<a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+						</a-camera>
+
+</a-scene>
+
+
+
+</body>
+</html>
