@@ -26,12 +26,12 @@ var pi = 3.141592653589793238;
 
 var bars = [];
 var heights = [] ;
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 20; i++) {
 var height = Math.floor(Math.random() * (100 - 30 + 1) + 30);
 
   bars[i] = new THREE.Mesh(new THREE.BoxGeometry(10, height, 10), new THREE.MeshBasicMaterial({color: 0x0443EE*i*i + 1000}));
   bars[i].position.z = -70;
-  bars[i].position.x = (i - (10/2) )*(15) ;
+  bars[i].position.x = (i - (10) )*(15) ;
   bars[i].position.y = -50 ;
   bars[i].userData = height ;
   heights[i] = bars[i].userData ;
@@ -141,11 +141,11 @@ if(i < len && aFlag === 1){
         // Render the scene through the VREffect.
         effect.render( scene, camera );
         //requestAnimationFrame( animate );
-        await sleep(3000) ;
+        await sleep(500) ;
 
-        bars[min].position.set((i - 5 )*15, -50 , -70) ;
+        bars[min].position.set((i - 10 )*15, -50 , -70) ;
 
-        bars[i].position.set((min - 5 )*15, -50 , -70) ;
+        bars[i].position.set((min - 10 )*15, -50 , -70) ;
 
        swap(bars, i, min);
 
