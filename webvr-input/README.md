@@ -41,4 +41,4 @@ include all the optimizations that rusc has to offer
 
 ## Usage
 
-*TODO*
+Currently, this is mean to be a library that developers will use for certain input devices. Each device that has been pgrogrammed and ready for use is inside of the `src/devices` category. The main class serves as an example of how this library would be used with both a mouse and a gaming controller. 
