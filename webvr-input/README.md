@@ -1,4 +1,4 @@
-#WEBVR-INPUT Rust Implementation
+# WEBVR-INPUT Rust Implementation
 
 This is a library for representing input devices in a way to standardize commmunication
 
