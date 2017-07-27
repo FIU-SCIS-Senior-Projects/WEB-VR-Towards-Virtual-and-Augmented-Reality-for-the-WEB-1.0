@@ -2,10 +2,12 @@ extern crate libusb;
 extern crate sdl2;
 
 pub mod mouse;
+pub mod empty_device; //added for empty device library
 pub mod controller;
 
 use spat_input::{InputAdapter, ConnectionMode};
 use devices::mouse::{Event, MouseResolutions};
+use devices::empty_device::GenericResolutions;
 use std::collections::HashSet;
 use std::time::Duration;
 
@@ -13,9 +15,11 @@ use sdl2::mouse::MouseState;
 use sdl2::controller::{Button, Axis };
 use std::thread; //For threads
 
+use libusb::{Direction, RequestType, Recipient}; // for generic device
+
 
 pub fn handle_mouse(dev: &mut InputAdapter<ConnectionMode, mouse::Input,
-                    mouse::State, String, mouse::Resolution, mouse::Event>, 
+                    mouse::State, String, mouse::Resolution, mouse::Event>,
                     state: &MouseState){
 
     let mut prev_buttons = HashSet::new();
@@ -73,4 +77,19 @@ pub fn handle_controller_button(dev: &mut InputAdapter<ConnectionMode, controlle
         _=>{}
     }
 
+}
+
+pub fn handle_empty_device(dev: &mut InputAdapter<ConnectionMode, empty_device::Input, empty_device::State, String, empty_device::Resolution, empty_device::Event>, request_type: &RequestType){
+
+    //dev.move_device_pointer(x, y, z);
+    //dev.move_device_pointer();
+    //dev.move_device_pointer(dev.input.x.current, dev.input.y.current, dev.input.z.current);
+    match dev.state {
+        empty_device::State::DownActive => println!("A button has been pressed"),
+        empty_device::State::UpActive => println!("A button has been released"),
+        _=>{}
+    }
+
+    dev.update_output();
+    println!("New device output: {}", dev.output);
 }
