@@ -11,6 +11,13 @@
 
     "editor.fontSize": 15,
     "editor.tabSize": 2,
-    "editor.wordWrap":"wordWrapColumn"
+    "editor.wordWrap":"wordWrapColumn",
+
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j","j"],
+            "after": ["<Esc>"]
+        }
+    ]
     
 }
