@@ -1,3 +1,6 @@
+//! This main class is an example of how to a developer would use the libraries
+//! using the SDL2 connector. In the future, with more connections,
+//! This main class will look very different.
 #[macro_use]
 extern crate serde_json;
 extern crate libusb;
