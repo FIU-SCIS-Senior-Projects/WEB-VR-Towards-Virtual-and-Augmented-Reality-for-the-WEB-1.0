@@ -1,29 +1,28 @@
-# WEB-VR-Towards-Virtual-and-Augmented-Reality-for-the-WEB-1.0
-WEB-VR: Towards Virtual and Augmented Reality for the WEB 1.0
+# Web-VR towards Virtual and Augmented Reality for the Web 1.0
 
-For A-Frame Demos:
+Each directory contains elements of the project. 
 
-NPM Script Commands
+### Code
 
-npm run serv
-  Starts a simple http server that serves index.html as the entry point.
+Inside of the code folder, there are readmes for each of the three projects.
 
-gulp bundle
-  Create the necessary javascript bundles.
+### Documents
 
-//////////////////////////////////////////////////////////////////////////
-
-
-For Cannon.js Demos:
+Inside of the Documents folder, there are records of each of all the activities
+that were done for this project. These include meeting minutes, and documentation
+for each of the sprints that took place. 
 
 
-Navigate to webvr-scenes/app/WebGL/WebGLViews/views/
+### Posters
 
-firefox Visuals.html 
+Each of the student posters can be found in this directory. Each student worked
+on different parts of the project, and the posters reflect their work. 
 
-OR
+### Presentation Slides
 
-google-chrome Visuals.html
+This folder contains the final presentation slides for this project
 
-Other browsers may work. 
-//////////////////////////////////////////////////////////////////////////
+### Presentation Slides
+
+The videos folder contains an index file that links to the playlist for the videos
+that describe the many aspects of this project.

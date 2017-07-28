@@ -1,1 +1,0 @@
-console.log('selection sort page script')
